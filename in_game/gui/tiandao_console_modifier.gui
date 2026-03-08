@@ -1,0 +1,57 @@
+# ============================================================
+# 控制台弹窗 GUI
+# 功能：打开一个输入框可以执行控制台指令
+# ============================================================
+window = {
+    # GUI 窗口的唯一名字
+    name = "tiandao_console_modifier"
+    visible = "[GetGlobalVariable('show_tiandao_console_modifier').IsSet]"
+    # 窗口以屏幕中心为锚点
+    parentanchor = center
+    # 允许窗口超出屏幕边界（和官方弹窗一致）
+    allow_outside = yes
+    # 初始窗口大小（最终会被内部布局影响）
+    size = { 600 300 }
+    state = {
+        name = _show
+        on_finish = "[GetVariableSystem.Set('input_console', '')]"
+    }
+    state = {
+        name = _hide
+        on_finish = "[GetVariableSystem.Clear('input_console')]"
+    }
+    app_input_modal = {
+        blockoverride "desc" {
+            text_single = {
+                margin_top = 10
+                text = "可以输入控制台指令执行"
+            }
+        }
+        blockoverride "title" {
+            text = "tiandao_console_modifier_interaction"
+        }
+        blockoverride "sub_title" {}
+        blockoverride "input" {
+            hbox = {
+                app_tiandao_input = {
+                    margin = {0 0}
+                    blockoverride "input_content" {
+                        size = { 555 30 }
+                        raw_text = "[GetVariableSystem.Get('input_console')]"
+                        ontextedited = "[GetVariableSystem.Set('input_console', GetTextFromSelfOrAnyChildEditbox(PdxGuiWidget.Self))]"
+                    }
+                }
+            }
+        }
+        blockoverride "on_cancel_click" {
+            # 关闭弹窗
+            onclick = "[GetScriptedGui('close_tiandao_console_modifier_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+        }
+        blockoverride "on_confirm_click" {
+            # 执行输入命令
+            onclick = "[ExecuteConsoleCommand(Localize('tiandao_console_modifier_effect'))]"
+            # 关闭弹窗
+            onclick = "[GetScriptedGui('close_tiandao_console_modifier_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+        }
+    }
+}

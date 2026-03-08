@@ -1,0 +1,32 @@
+﻿# 脚本参考来源: https://eu5.paradoxwikis.com/Character_modding
+tiandao_console_modifier_interaction = {
+    context_menu_click_mode = click # 点击交互按钮不会出现确认弹窗
+    message = no #意味着当效果执行后，系统必须发送一条通知给玩家。
+    on_own_nation = yes  # 只能对自己国家的人用
+    force_accept = no
+    # 什么时候显示这个右键选项
+    potential = {
+        scope:actor = {
+            is_player = yes  # 只有玩家能看见
+        }
+    }
+    # 谁能被选中改名
+    select_trigger = {
+        looking_for_a = character
+        source = actor
+        target_flag = recipient
+        column = { data = name }
+        visible = {}
+        enabled = {}
+    }
+    effect = {
+        scope:actor = {
+            # 打开修改器
+            set_global_variable = { name = show_tiandao_console_modifier value = yes }
+        }
+    }
+    # AI 永远不会主动去用这个功能 [cite: 44, 48]
+    ai_will_do = {
+        value = 0
+    }
+}

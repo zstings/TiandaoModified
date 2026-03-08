@@ -1,3 +1,5 @@
 ﻿# 告诉引擎：这个 GUI 名字叫 tiandao_rename，对应的文件是 gui/tiandao_rename.gui
 
 gui/tiandao_character_modifier.gui = tiandao_character_modifier
+gui/tiandao_console_modifier.gui = tiandao_console_modifier
+
