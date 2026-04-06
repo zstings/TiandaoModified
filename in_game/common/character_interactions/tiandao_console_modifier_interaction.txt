@@ -9,6 +9,9 @@ tiandao_console_modifier_interaction = {
         scope:actor = {
             is_player = yes  # 只有玩家能看见
         }
+        scope:recipient = {
+            is_ruler = yes   # 接收者（被点选的人）必须是君主
+        }
     }
     # 谁能被选中改名
     select_trigger = {
