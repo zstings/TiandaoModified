@@ -15,7 +15,8 @@ window = {
     state = {
         name = _show
         on_finish = "[GetVariableSystem.Set('input_first_name', Character.GetFirstNameWithNoTooltip)]"
-        on_finish = "[GetVariableSystem.Set('input_nickname', Character.GetNicknameWithNoTooltip)]"
+        on_finish = "[GetVariableSystem.Set('input_dynasty', Character.GetNicknameWithNoTooltip)]"
+        on_finish = "[GetVariableSystem.Set('input_age', Character.GetNicknameWithNoTooltip)]"
         on_finish = "[GetVariableSystem.Set('input_adm', ToString_int32( Character.GetAbility('adm')))]"
         on_finish = "[GetVariableSystem.Set('input_dip', ToString_int32( Character.GetAbility('dip')))]"
         on_finish = "[GetVariableSystem.Set('input_mil', ToString_int32( Character.GetAbility('mil')))]"
@@ -23,7 +24,8 @@ window = {
     state = {
         name = _hide
         on_finish = "[GetVariableSystem.Clear('input_first_name')]"
-        on_finish = "[GetVariableSystem.Clear('input_nickname')]"
+        on_finish = "[GetVariableSystem.Clear('input_dynasty')]"
+        on_finish = "[GetVariableSystem.Clear('input_age')]"
         on_finish = "[GetVariableSystem.Clear('input_adm')]"
         on_finish = "[GetVariableSystem.Clear('input_dip')]"
         on_finish = "[GetVariableSystem.Clear('input_mil')]"
@@ -47,8 +49,8 @@ window = {
                     }
                     blockoverride "input_content" {
                         size = { 255 30 }
-                        raw_text = "[GetVariableSystem.Get('input_first_name')]"
-                        ontextedited = "[GetVariableSystem.Set('input_first_name', GetTextFromSelfOrAnyChildEditbox(PdxGuiWidget.Self))]"
+                        raw_text = "[GetVariableSystem.Get('input_dynasty')]"
+                        ontextedited = "[GetVariableSystem.Set('input_dynasty', GetTextFromSelfOrAnyChildEditbox(PdxGuiWidget.Self))]"
                     }
                 }
                 app_tiandao_input = {
@@ -61,8 +63,8 @@ window = {
                     }
                     blockoverride "input_content" {
                         size = { 255 30 }
-                        raw_text = "[GetVariableSystem.Get('input_nickname')]"
-                        ontextedited = "[GetVariableSystem.Set('input_nickname', GetTextFromSelfOrAnyChildEditbox(PdxGuiWidget.Self))]"
+                        raw_text = "[GetVariableSystem.Get('input_first_name')]"
+                        ontextedited = "[GetVariableSystem.Set('input_first_name', GetTextFromSelfOrAnyChildEditbox(PdxGuiWidget.Self))]"
                     }
                 }
             }
@@ -92,8 +94,8 @@ window = {
                     }
                     blockoverride "input_content" {
                         size = { 255 30 }
-                        raw_text = "[GetVariableSystem.Get('input_nickname')]"
-                        ontextedited = "[GetVariableSystem.Set('input_nickname', GetTextFromSelfOrAnyChildEditbox(PdxGuiWidget.Self))]"
+                        raw_text = "[GetVariableSystem.Get('input_age')]"
+                        ontextedited = "[GetVariableSystem.Set('input_age', GetTextFromSelfOrAnyChildEditbox(PdxGuiWidget.Self))]"
                     }
                 }
             }
@@ -148,13 +150,14 @@ window = {
         }
         blockoverride "on_cancel_click" {
             # 关闭弹窗
-            onclick = "[ExecuteConsoleCommand('gui.ClearWidgets tiandao_modifier_main')]"
+            onclick = "[GetScriptedGui('close_tiandao_character_create_modifier_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
         }
         blockoverride "on_confirm_click" {
             # 执行修改角色信息
-            onclick = "[ExecuteConsoleCommand('effect generate_xuda_effect = yes')]"
+            onclick = "[ExecuteConsoleCommand(Localize('tiandao_character_create_modifier_effect'))]"
+            #onclick = "[ExecuteConsoleCommand('effect generate_character_create_effect = { age = 18 adm = 10 mil = 10 dip = 10 dynasty = 徐 first_name = 煦妙锦 }')]"
             # 关闭弹窗
-            onclick = "[GetScriptedGui('close_tiandao_character_modifier_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+            onclick = "[GetScriptedGui('close_tiandao_character_create_modifier_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
         }
     }
 }

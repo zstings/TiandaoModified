@@ -6,3 +6,4 @@ l_simp_chinese:
   tiandao_character_modifier_effect: "effect global_var:tiandao_current_target = { set_first_name = \"[GetVariableSystem.Get(\'input_first_name\')]\" set_nickname = \"[GetVariableSystem.Get(\'input_nickname\')]\" add_adm = -100 add_adm = [GetVariableSystem.Get(\'input_adm\')] add_dip = -100 add_dip = [GetVariableSystem.Get(\'input_dip\')] add_mil = -100 add_mil = [GetVariableSystem.Get(\'input_mil\')] }"
   tiandao_console_modifier_interaction: "天道·控制台修改器"
   tiandao_console_modifier_effect: "[GetVariableSystem.Get(\'input_console\')]"
+  tiandao_character_create_modifier_effect: "effect generate_character_create_effect = { age = \"[GetVariableSystem.Get(\'input_age\')]\" adm = \"[GetVariableSystem.Get(\'input_adm\')]\" mil = [GetVariableSystem.Get(\'input_mil\')] dip = [GetVariableSystem.Get(\'input_dip\')] dynasty = [GetVariableSystem.Get(\'input_dynasty\')] first_name = [GetVariableSystem.Get(\'input_first_name\')] }"

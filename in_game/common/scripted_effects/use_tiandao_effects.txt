@@ -10,3 +10,24 @@ input_number_digit = {
         add = $DIGIT$
     }
 }
+
+# 定义一个生成角色的 effect，方便 GUI 调用
+generate_character_create_effect = {
+    create_named_dynasty = $dynasty$
+    create_character = {
+        adm = $adm$
+        dip = $dip$
+        mil = $mil$
+        dynasty = dynasty:$dynasty$
+        first_name = $first_name$
+        age = $age$
+        female = yes
+        # female = yes         # 性别
+        culture = root.culture  # 继承国家的文化
+        religion = root.religion # 继承国家的宗教
+        # 如果你想让他具备特定的武将特质（参考 modifiers.log）
+        # traits = { great_general }
+        # 让他成为你的将领或官员 （无效）
+        # save_scope_as = xu_da_scope
+    }
+}

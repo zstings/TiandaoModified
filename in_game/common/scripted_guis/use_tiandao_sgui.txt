@@ -30,3 +30,11 @@ close_tiandao_console_modifier_sgui = {
         remove_global_variable = show_tiandao_console_modifier
     }
 }
+# 关闭弹窗
+close_tiandao_character_create_modifier_sgui = {
+    scope = country
+    effect = {
+        # 直接在这里清除全局变量
+        remove_global_variable = show_tiandao_character_create_modifier
+    }
+}
