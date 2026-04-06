@@ -21,13 +21,10 @@ generate_character_create_effect = {
         dynasty = dynasty:$dynasty$
         first_name = $first_name$
         age = $age$
-        female = yes
+        female = $sex$
         # female = yes         # 性别
         culture = root.culture  # 继承国家的文化
         religion = root.religion # 继承国家的宗教
-        # 如果你想让他具备特定的武将特质（参考 modifiers.log）
-        # traits = { great_general }
-        # 让他成为你的将领或官员 （无效）
-        # save_scope_as = xu_da_scope
+        estate = estate_type:nobles_estate # 贵族
     }
 }
