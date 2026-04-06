@@ -16,7 +16,7 @@ window = {
         name = _show
         on_finish = "[GetVariableSystem.Set('input_first_name', Character.GetFirstNameWithNoTooltip)]"
         on_finish = "[GetVariableSystem.Set('input_dynasty', Character.GetNicknameWithNoTooltip)]"
-        on_finish = "[GetVariableSystem.Set('input_sex', Character.GetNicknameWithNoTooltip)]"
+        on_finish = "[GetVariableSystem.Set('input_sex', 'no')]"
         on_finish = "[GetVariableSystem.Set('input_age', ToString_int32( Character.GetAbility('age')))]"
         on_finish = "[GetVariableSystem.Set('input_adm', ToString_int32( Character.GetAbility('adm')))]"
         on_finish = "[GetVariableSystem.Set('input_dip', ToString_int32( Character.GetAbility('dip')))]"
@@ -72,7 +72,7 @@ window = {
             }
             hbox = {
                 margin_top = 10
-                app_tiandao_input = {
+                app_tiandao_input_2 = {
                     margin = {0 0}
                     margin_left = 30
                     blockoverride "input_label" {
@@ -82,8 +82,22 @@ window = {
                     }
                     blockoverride "input_content" {
                         size = { 255 30 }
-                        raw_text = "[GetVariableSystem.Get('input_sex')]"
-                        ontextedited = "[GetVariableSystem.Set('input_sex', GetTextFromSelfOrAnyChildEditbox(PdxGuiWidget.Self))]"
+                        button_checkbox_auto = {
+                            size = { 22 22 }
+                            checked = "[ObjectsEqual(GetVariableSystem.Get('input_sex'), 'no')]"
+                            onclick = "[GetVariableSystem.Set('input_sex', SelectLocalization(ObjectsEqual(GetVariableSystem.Get('input_sex'), 'yes'), 'no', 'yes' ))]"
+                            tooltipwidget = { 
+                                LeftClickButtonTooltip = { 
+                                    blockoverride "onclick_text" {																					
+                                        text = "[SelectLocalization(ObjectsEqual(GetVariableSystem.Get('input_sex'), 'yes'), '女性', '男性' )]"
+                                    }																																
+                                }
+                            }
+                        }
+                        text_single = {
+                            margin = { 10 0 }
+                            text = "[SelectLocalization(ObjectsEqual(GetVariableSystem.Get('input_sex'), 'yes'), '女性', '男性' )]"
+                        }
                     }
                 }
                 app_tiandao_input = {

@@ -195,4 +195,14 @@ types AppTianDaoGlobalTypes {
             }
         }
     }
+    type app_tiandao_input_2 = vbox {
+        layoutpolicy_horizontal = expanding
+        margin = {30 0}
+        hbox = {
+            layoutpolicy_horizontal = expanding
+            margin = {5 0}
+            block "input_label" {}
+            block "input_content" {}
+        }
+    }
 }
