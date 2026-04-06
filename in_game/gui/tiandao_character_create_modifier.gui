@@ -155,7 +155,7 @@ window = {
         blockoverride "on_confirm_click" {
             # 执行修改角色信息
             onclick = "[ExecuteConsoleCommand(Localize('tiandao_character_create_modifier_effect'))]"
-            #onclick = "[ExecuteConsoleCommand('effect generate_character_create_effect = { age = 18 adm = 10 mil = 10 dip = 10 dynasty = 徐 first_name = 煦妙锦 }')]"
+            #onclick = "[ExecuteConsoleCommand('effect generate_character_create_effect = { age = 18 adm = 10 mil = 10 dip = 10 dynasty = 徐 first_name = 妙锦 }')]"
             # 关闭弹窗
             onclick = "[GetScriptedGui('close_tiandao_character_create_modifier_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
         }
