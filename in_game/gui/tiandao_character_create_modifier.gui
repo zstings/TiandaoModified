@@ -1,0 +1,160 @@
+# ============================================================
+# 角色改名弹窗 GUI
+# 功能：为 interaction 保存的 current_target 角色输入新名字
+# ============================================================
+window = {
+    # GUI 窗口的唯一名字
+    name = "tiandao_character_create_modifier"
+    visible = "[GetGlobalVariable('show_tiandao_character_create_modifier').IsSet]"
+    # 窗口以屏幕中心为锚点
+    parentanchor = center
+    # 允许窗口超出屏幕边界（和官方弹窗一致）
+    allow_outside = yes
+    # 初始窗口大小（最终会被内部布局影响）
+    size = { 600 300 }
+    state = {
+        name = _show
+        on_finish = "[GetVariableSystem.Set('input_first_name', Character.GetFirstNameWithNoTooltip)]"
+        on_finish = "[GetVariableSystem.Set('input_nickname', Character.GetNicknameWithNoTooltip)]"
+        on_finish = "[GetVariableSystem.Set('input_adm', ToString_int32( Character.GetAbility('adm')))]"
+        on_finish = "[GetVariableSystem.Set('input_dip', ToString_int32( Character.GetAbility('dip')))]"
+        on_finish = "[GetVariableSystem.Set('input_mil', ToString_int32( Character.GetAbility('mil')))]"
+    }
+    state = {
+        name = _hide
+        on_finish = "[GetVariableSystem.Clear('input_first_name')]"
+        on_finish = "[GetVariableSystem.Clear('input_nickname')]"
+        on_finish = "[GetVariableSystem.Clear('input_adm')]"
+        on_finish = "[GetVariableSystem.Clear('input_dip')]"
+        on_finish = "[GetVariableSystem.Clear('input_mil')]"
+    }
+    app_input_modal = {
+        blockoverride "desc" {}
+        blockoverride "title" {
+            text = "tiandao_character_modifier_interaction"
+        }
+        blockoverride "sub_title" {}
+        blockoverride "input" {
+            hbox = {
+                margin_top = 10
+                app_tiandao_input = {
+                    margin = {0 0}
+                    margin_left = 30
+                    blockoverride "input_label" {
+                        text_single = {
+                            text = "姓氏："
+                        }
+                    }
+                    blockoverride "input_content" {
+                        size = { 255 30 }
+                        raw_text = "[GetVariableSystem.Get('input_first_name')]"
+                        ontextedited = "[GetVariableSystem.Set('input_first_name', GetTextFromSelfOrAnyChildEditbox(PdxGuiWidget.Self))]"
+                    }
+                }
+                app_tiandao_input = {
+                    margin = {0 0}
+                    margin_right = 30
+                    blockoverride "input_label" {
+                        text_single = {
+                            text = "名称："
+                        }
+                    }
+                    blockoverride "input_content" {
+                        size = { 255 30 }
+                        raw_text = "[GetVariableSystem.Get('input_nickname')]"
+                        ontextedited = "[GetVariableSystem.Set('input_nickname', GetTextFromSelfOrAnyChildEditbox(PdxGuiWidget.Self))]"
+                    }
+                }
+            }
+            hbox = {
+                margin_top = 10
+                app_tiandao_input = {
+                    margin = {0 0}
+                    margin_left = 30
+                    blockoverride "input_label" {
+                        text_single = {
+                            text = "性别："
+                        }
+                    }
+                    blockoverride "input_content" {
+                        size = { 255 30 }
+                        raw_text = "[GetVariableSystem.Get('input_first_name')]"
+                        ontextedited = "[GetVariableSystem.Set('input_first_name', GetTextFromSelfOrAnyChildEditbox(PdxGuiWidget.Self))]"
+                    }
+                }
+                app_tiandao_input = {
+                    margin = {0 0}
+                    margin_right = 30
+                    blockoverride "input_label" {
+                        text_single = {
+                            text = "年龄："
+                        }
+                    }
+                    blockoverride "input_content" {
+                        size = { 255 30 }
+                        raw_text = "[GetVariableSystem.Get('input_nickname')]"
+                        ontextedited = "[GetVariableSystem.Set('input_nickname', GetTextFromSelfOrAnyChildEditbox(PdxGuiWidget.Self))]"
+                    }
+                }
+            }
+            hbox = {
+                margin_top = 10
+                margin_bottom = 20
+                app_tiandao_input = {
+                    margin = {0 0}
+                    margin_left = 30
+                    blockoverride "input_label" {
+                        text_single = {
+                            text = "行政："
+                        }
+                    }
+                    blockoverride "input_content" {
+                        size = { 150 30 }
+                        maxcharacters = 4
+                        raw_text = "[GetVariableSystem.Get('input_adm')]"
+                        ontextedited = "[GetVariableSystem.Set('input_adm', GetTextFromSelfOrAnyChildEditbox(PdxGuiWidget.Self))]"
+                    }
+                }
+                app_tiandao_input = {
+                    margin = {0 0}
+                    blockoverride "input_label" {
+                        text_single = {
+                            text = "外交："
+                        }
+                    }
+                    blockoverride "input_content" {
+                        size = { 150 30 }
+                        maxcharacters = 4
+                        raw_text = "[GetVariableSystem.Get('input_dip')]"
+                        ontextedited = "[GetVariableSystem.Set('input_dip', GetTextFromSelfOrAnyChildEditbox(PdxGuiWidget.Self))]"
+                    }
+                }
+                app_tiandao_input = {
+                    margin = {0 0}
+                    margin_right = 30
+                    blockoverride "input_label" {
+                        text_single = {
+                            text = "军事："
+                        }
+                    }
+                    blockoverride "input_content" {
+                        size = { 150 30 }
+                        maxcharacters = 4
+                        raw_text = "[GetVariableSystem.Get('input_mil')]"
+                        ontextedited = "[GetVariableSystem.Set('input_mil', GetTextFromSelfOrAnyChildEditbox(PdxGuiWidget.Self))]"
+                    }
+                }
+            }
+        }
+        blockoverride "on_cancel_click" {
+            # 关闭弹窗
+            onclick = "[ExecuteConsoleCommand('gui.ClearWidgets tiandao_modifier_main')]"
+        }
+        blockoverride "on_confirm_click" {
+            # 执行修改角色信息
+            onclick = "[ExecuteConsoleCommand('effect generate_xuda_effect = yes')]"
+            # 关闭弹窗
+            onclick = "[GetScriptedGui('close_tiandao_character_modifier_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+        }
+    }
+}

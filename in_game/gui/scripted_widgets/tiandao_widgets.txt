@@ -2,4 +2,5 @@
 
 gui/tiandao_character_modifier.gui = tiandao_character_modifier
 gui/tiandao_console_modifier.gui = tiandao_console_modifier
+gui/tiandao_character_create_modifier.gui = tiandao_character_create_modifier
 
