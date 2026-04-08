@@ -29,6 +29,91 @@ generate_character_create_effect = {
     }
 }
 
+
+# 定义明初武将家族关系
+generate_character_create_effect_mingchu = {
+    # 创建宗族
+    create_named_dynasty = 常
+    create_named_dynasty = 蓝
+    # 蓝春应
+    create_character = {
+        dynasty = dynasty:蓝
+        adm = { 50 80 }
+        dip = { 40 70 }
+        mil = { 70 95 }
+        first_name = 春应
+        age = 35
+        female = no
+        culture = root.culture
+        religion = root.religion
+        estate = estate_type:nobles_estate
+        save_scope_as = lan_chunying_scope
+    }
+    # 常遇春
+    create_character = {
+        dynasty = dynasty:常
+        adm = { 50 80 }
+        dip = { 40 70 }
+        mil = { 75 99 }
+        first_name = 遇春
+        age = 25
+        female = no
+        culture = root.culture
+        religion = root.religion
+        estate = estate_type:nobles_estate
+        save_scope_as = chang_yuchun_scope
+    }
+    # 常遇春-妻子蓝氏（玉娘）
+    create_character = {
+        dynasty = dynasty:蓝
+        adm = { 40 70 }
+        dip = { 40 70 }
+        mil = { 30 60 }
+        first_name = 玉娘
+        age = 23
+        female = yes
+        culture = root.culture
+        religion = root.religion
+        estate = estate_type:nobles_estate
+        save_scope_as = lan_yuniang_scope
+        father = scope:lan_chunying_scope # 指定父亲
+    }
+    # 常遇春-长子常茂
+    create_character = {
+        dynasty = dynasty:常
+        adm = { 30 60 }
+        dip = { 30 60 }
+        mil = { 30 60 }
+        first_name = 茂
+        age = 0
+        female = no
+        culture = root.culture
+        religion = root.religion
+        estate = estate_type:nobles_estate
+        father = scope:chang_yuchun_scope # 指定父亲
+        mother = scope:lan_yuniang_scope # 指定母亲
+    }
+    # 蓝玉
+    create_character = {
+        dynasty = dynasty:蓝
+        adm = { 50 80 }
+        dip = { 40 70 }
+        mil = { 70 95 }
+        first_name = 玉
+        age = 18
+        female = no
+        culture = root.culture
+        religion = root.religion
+        estate = estate_type:nobles_estate
+        father = scope:lan_chunying_scope # 指定父亲
+    }
+    # ✅ 用 marry_character 设置夫妻关系（双向）
+    scope:chang_yuchun_scope = {
+        marry_character = scope:lan_yuniang_scope
+    }
+}
+
+
 # 定义徐达家族
 generate_character_create_effect_xuda = {
     create_named_dynasty = 徐
@@ -57,7 +142,7 @@ generate_character_create_effect_changyucun = {
         dip = { 40 70 }
         mil = { 75 99 } # 常遇春是猛将，军事极高
         dynasty = dynasty:常
-        first_name = 遇春1
+        first_name = 遇春
         age = 25
         female = no
         culture = root.culture
@@ -71,14 +156,12 @@ generate_character_create_effect_changyucun = {
         dip = { 40 70 }
         mil = { 30 60 } # 将门虎女
         dynasty = dynasty:蓝 # 设定为蓝氏家族，暗示与蓝玉的关系
-        first_name = 玉娘1 # 给她一个代号，或者用 "氏"
+        first_name = 玉娘 # 给她一个代号，或者用 "氏"
         age = 23 # 比常遇春小两岁
         female = yes
         culture = root.culture
         religion = root.religion
         estate = estate_type:nobles_estate
-        # 关键：设定丈夫为常遇春
-        spouse = scope:chang_yuchun_scope
         # 保存为变量，以便生成儿子时指定母亲
         save_scope_as = chang_wife_scope
     }
@@ -112,8 +195,12 @@ generate_character_create_effect_changyucun = {
         culture = root.culture
         religion = root.religion
         estate = estate_type:nobles_estate
-        sibling = scope:chang_wife_scope
     }
+    # ✅ 用 marry_character 设置夫妻关系（双向）
+    scope:chang_yuchun_scope = {
+        marry_character = scope:chang_wife_scope
+    }
+    # 兄弟姐妹不能直接指定，需要指定两个角色的共同父母来实现
 }
 
 # 定义李文忠 (朱元璋外甥，此时是少年)
