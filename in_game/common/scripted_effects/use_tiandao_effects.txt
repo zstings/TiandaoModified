@@ -172,7 +172,7 @@ generate_character_create_effect_mingchu = {
         culture = root.culture
         religion = root.religion
         estate = estate_type:nobles_estate
-        save_scope_as = liu Bowen_scope
+        save_scope_as = liu_bowen_scope
     }  
     # 李善长 - 开国第一文臣
     create_character = {
