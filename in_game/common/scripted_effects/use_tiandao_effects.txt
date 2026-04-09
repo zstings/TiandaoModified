@@ -35,6 +35,16 @@ generate_character_create_effect_mingchu = {
     # 创建宗族
     create_named_dynasty = 常
     create_named_dynasty = 蓝
+    create_named_dynasty = 徐
+    create_named_dynasty = 李
+    create_named_dynasty = 刘
+    create_named_dynasty = 汤
+    create_named_dynasty = 邓
+    create_named_dynasty = 傅
+    create_named_dynasty = 冯
+    create_named_dynasty = 胡
+    create_named_dynasty = 廖
+    create_named_dynasty = 沐
     # 蓝春应
     create_character = {
         dynasty = dynasty:蓝
@@ -111,6 +121,146 @@ generate_character_create_effect_mingchu = {
         estate = estate_type:nobles_estate
         father = scope:chang_yuchun_scope # 指定父亲
         mother = scope:lan_yuee_scope # 指定母亲
+    }
+    # 徐达 - 开国第一名将
+    create_character = {
+        dynasty = 徐
+        adm = { 40 70 }
+        dip = { 40 70 }
+        mil = { 80 99 }
+        first_name = 达
+        age = 23
+        female = no
+        culture = root.culture
+        religion = root.religion
+        estate = estate_type:nobles_estate
+        save_scope_as = xu_da_scope
+    }
+    # 刘伯温（刘基）- 传奇军师
+    create_character = {
+        dynasty = 刘
+        adm = { 75 99 }
+        dip = { 70 95 }
+        mil = { 50 80 }
+        first_name = 基
+        age = 44
+        female = no
+        culture = root.culture
+        religion = root.religion
+        estate = estate_type:nobles_estate
+        save_scope_as = liu Bowen_scope
+    }  
+    # 李善长 - 开国第一文臣
+    create_character = {
+        dynasty = 李
+        adm = { 75 99 }
+        dip = { 60 90 }
+        mil = { 20 40 }
+        first_name = 善长
+        age = 41
+        female = no
+        culture = root.culture
+        religion = root.religion
+        estate = estate_type:nobles_estate
+        save_scope_as = li_shanchang_scope
+    } 
+    # 汤和 - 朱元璋发小
+    create_character = {
+        dynasty = 汤
+        adm = { 40 70 }
+        dip = { 50 80 }
+        mil = { 65 90 }
+        first_name = 和
+        age = 29
+        female = no
+        culture = root.culture
+        religion = root.religion
+        estate = estate_type:nobles_estate
+        save_scope_as = tang_he_scope
+    }
+    # 邓愈 - 开国六王
+    create_character = {
+        dynasty = 邓
+        adm = { 40 70 }
+        dip = { 40 70 }
+        mil = { 65 90 }
+        first_name = 愈
+        age = 18
+        female = no
+        culture = root.culture
+        religion = root.religion
+        estate = estate_type:nobles_estate
+        save_scope_as = deng_yu_scope
+    }
+    # 傅友德 - 平定云南名将
+    create_character = {
+        dynasty = 傅
+        adm = { 35 65 }
+        dip = { 40 70 }
+        mil = { 75 99 }
+        first_name = 友德
+        age = 24
+        female = no
+        culture = root.culture
+        religion = root.religion
+        estate = estate_type:nobles_estate
+        save_scope_as = fu_youde_scope
+    }
+    # 冯胜 - 北伐名将
+    create_character = {
+        dynasty = 冯
+        adm = { 40 70 }
+        dip = { 45 75 }
+        mil = { 65 90 }
+        first_name = 胜
+        age = 22
+        female = no
+        culture = root.culture
+        religion = root.religion
+        estate = estate_type:nobles_estate
+        save_scope_as = feng_sheng_scope
+    }
+    # 胡大海 - 早期猛将
+    create_character = {
+        dynasty = 胡
+        adm = { 20 40 }
+        dip = { 30 60 }
+        mil = { 80 99 }
+        first_name = 大海
+        age = 30
+        female = no
+        culture = root.culture
+        religion = root.religion
+        estate = estate_type:nobles_estate
+        save_scope_as = hu_dahai_scope
+    }
+    # 廖永忠 - 鄱阳湖水战功臣
+    create_character = {
+        dynasty = 廖
+        adm = { 35 65 }
+        dip = { 40 70 }
+        mil = { 70 95 }
+        first_name = 永忠
+        age = 21
+        female = no
+        culture = root.culture
+        religion = root.religion
+        estate = estate_type:nobles_estate
+        save_scope_as = liao_yongzhong_scope
+    }
+    # 沐英 - 朱元璋养子
+    create_character = {
+        dynasty = 沐
+        adm = { 50 80 }
+        dip = { 50 80 }
+        mil = { 60 90 }
+        first_name = 英
+        age = 10
+        female = no
+        culture = root.culture
+        religion = root.religion
+        estate = estate_type:nobles_estate
+        save_scope_as = mu_ying_scope
     }
 }
 
