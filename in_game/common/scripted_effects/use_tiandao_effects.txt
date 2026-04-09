@@ -130,7 +130,7 @@ generate_character_create_effect_mingchu = {
     }
     # 徐达 - 开国第一名将
     create_character = {
-        dynasty = 徐
+        dynasty = dynasty:徐
         adm = { 40 70 }
         dip = { 40 70 }
         mil = { 80 99 }
@@ -144,7 +144,7 @@ generate_character_create_effect_mingchu = {
     }
     # 徐达-妻子谢夫人
     create_character = {
-        dynasty = 谢
+        dynasty = dynasty:谢
         adm = { 40 70 }
         dip = { 40 70 }
         mil = { 30 60 }
@@ -162,7 +162,7 @@ generate_character_create_effect_mingchu = {
     }
     # 刘伯温（刘基）- 传奇军师
     create_character = {
-        dynasty = 刘
+        dynasty = dynasty:刘
         adm = { 75 99 }
         dip = { 70 95 }
         mil = { 50 80 }
@@ -176,7 +176,7 @@ generate_character_create_effect_mingchu = {
     }  
     # 李善长 - 开国第一文臣
     create_character = {
-        dynasty = 李
+        dynasty = dynasty:李
         adm = { 75 99 }
         dip = { 60 90 }
         mil = { 20 40 }
@@ -190,7 +190,7 @@ generate_character_create_effect_mingchu = {
     }
     # 李善长-妻子郑氏
     create_character = {
-        dynasty = 郑
+        dynasty = dynasty:郑
         adm = { 40 70 }
         dip = { 40 70 }
         mil = { 30 60 }
@@ -208,7 +208,7 @@ generate_character_create_effect_mingchu = {
     }
     # 汤和 - 朱元璋发小
     create_character = {
-        dynasty = 汤
+        dynasty = dynasty:汤
         adm = { 40 70 }
         dip = { 50 80 }
         mil = { 65 90 }
@@ -222,7 +222,7 @@ generate_character_create_effect_mingchu = {
     }
     # 汤和-妻子周氏
     create_character = {
-        dynasty = 周
+        dynasty = dynasty:周
         adm = { 40 70 }
         dip = { 40 70 }
         mil = { 30 60 }
@@ -240,7 +240,7 @@ generate_character_create_effect_mingchu = {
     }
     # 邓愈 - 开国六王
     create_character = {
-        dynasty = 邓
+        dynasty = dynasty:邓
         adm = { 40 70 }
         dip = { 40 70 }
         mil = { 65 90 }
@@ -254,7 +254,7 @@ generate_character_create_effect_mingchu = {
     }
     # 傅友德 - 平定云南名将
     create_character = {
-        dynasty = 傅
+        dynasty = dynasty:傅
         adm = { 35 65 }
         dip = { 40 70 }
         mil = { 75 99 }
@@ -268,7 +268,7 @@ generate_character_create_effect_mingchu = {
     }
     # 冯胜 - 北伐名将
     create_character = {
-        dynasty = 冯
+        dynasty = dynasty:冯
         adm = { 40 70 }
         dip = { 45 75 }
         mil = { 65 90 }
@@ -282,7 +282,7 @@ generate_character_create_effect_mingchu = {
     }
     # 胡大海 - 早期猛将
     create_character = {
-        dynasty = 胡
+        dynasty = dynasty:胡
         adm = { 20 40 }
         dip = { 30 60 }
         mil = { 80 99 }
@@ -296,7 +296,7 @@ generate_character_create_effect_mingchu = {
     }
     # 廖永忠 - 鄱阳湖水战功臣
     create_character = {
-        dynasty = 廖
+        dynasty = dynasty:廖
         adm = { 35 65 }
         dip = { 40 70 }
         mil = { 70 95 }
@@ -310,7 +310,7 @@ generate_character_create_effect_mingchu = {
     }
     # 沐英 - 朱元璋养子
     create_character = {
-        dynasty = 沐
+        dynasty = dynasty:沐
         adm = { 50 80 }
         dip = { 50 80 }
         mil = { 60 90 }
