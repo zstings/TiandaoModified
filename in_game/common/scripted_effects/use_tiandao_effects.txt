@@ -49,50 +49,6 @@ generate_character_create_effect_mingchu = {
         estate = estate_type:nobles_estate
         save_scope_as = lan_chunying_scope
     }
-    # 常遇春
-    create_character = {
-        dynasty = dynasty:常
-        adm = { 50 80 }
-        dip = { 40 70 }
-        mil = { 75 99 }
-        first_name = 遇春
-        age = 25
-        female = no
-        culture = root.culture
-        religion = root.religion
-        estate = estate_type:nobles_estate
-        save_scope_as = chang_yuchun_scope
-    }
-    # 常遇春-妻子蓝氏（玉娘）
-    create_character = {
-        dynasty = dynasty:蓝
-        adm = { 40 70 }
-        dip = { 40 70 }
-        mil = { 30 60 }
-        first_name = 玉娘
-        age = 23
-        female = yes
-        culture = root.culture
-        religion = root.religion
-        estate = estate_type:nobles_estate
-        save_scope_as = lan_yuniang_scope
-        father = scope:lan_chunying_scope # 指定父亲
-    }
-    # 常遇春-长子常茂
-    create_character = {
-        dynasty = dynasty:常
-        adm = { 30 60 }
-        dip = { 30 60 }
-        mil = { 30 60 }
-        first_name = 茂
-        age = 0
-        female = no
-        culture = root.culture
-        religion = root.religion
-        estate = estate_type:nobles_estate
-        father = scope:chang_yuchun_scope # 指定父亲
-        mother = scope:lan_yuniang_scope # 指定母亲
-    }
     # 蓝玉
     create_character = {
         dynasty = dynasty:蓝
@@ -107,9 +63,54 @@ generate_character_create_effect_mingchu = {
         estate = estate_type:nobles_estate
         father = scope:lan_chunying_scope # 指定父亲
     }
+    # 常遇春
+    create_character = {
+        dynasty = dynasty:常
+        adm = { 50 80 }
+        dip = { 40 70 }
+        mil = { 75 99 }
+        first_name = 遇春
+        age = 25
+        female = no
+        culture = root.culture
+        religion = root.religion
+        estate = estate_type:nobles_estate
+        save_scope_as = chang_yuchun_scope
+    }
+    # 常遇春-妻子蓝氏（月娥）
+    create_character = {
+        dynasty = dynasty:蓝
+        adm = { 40 70 }
+        dip = { 40 70 }
+        mil = { 30 60 }
+        first_name = 月娥
+        age = 23
+        female = yes
+        culture = root.culture
+        religion = root.religion
+        estate = estate_type:nobles_estate
+        save_scope_as = lan_yuee_scope
+        father = scope:lan_chunying_scope # 指定父亲
+    }
+    # 绑定常遇春和蓝余量的夫妻关系
     # ✅ 用 marry_character 设置夫妻关系（双向）
     scope:chang_yuchun_scope = {
-        marry_character = scope:lan_yuniang_scope
+        marry_character = scope:lan_yuee_scope
+    }
+    # 常遇春-长子常茂
+    create_character = {
+        dynasty = dynasty:常
+        adm = { 30 60 }
+        dip = { 30 60 }
+        mil = { 30 60 }
+        first_name = 茂
+        age = 0
+        female = no
+        culture = root.culture
+        religion = root.religion
+        estate = estate_type:nobles_estate
+        father = scope:chang_yuchun_scope # 指定父亲
+        mother = scope:lan_yuee_scope # 指定母亲
     }
 }
 
