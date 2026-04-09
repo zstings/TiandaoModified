@@ -48,6 +48,8 @@ generate_character_create_effect_mingchu = {
     create_named_dynasty = 胡
     create_named_dynasty = 廖
     create_named_dynasty = 沐
+    create_named_dynasty = 张
+    create_named_dynasty = 谢
     # 蓝春应
     create_character = {
         dynasty = dynasty:蓝
@@ -137,6 +139,24 @@ generate_character_create_effect_mingchu = {
         religion = root.religion
         estate = estate_type:nobles_estate
         save_scope_as = xu_da_scope
+    }
+    # 徐达-妻子谢夫人
+    create_character = {
+        dynasty = 谢
+        adm = { 40 70 }
+        dip = { 40 70 }
+        mil = { 30 60 }
+        first_name = 夫人
+        age = 21
+        female = yes
+        culture = root.culture
+        religion = root.religion
+        estate = estate_type:nobles_estate
+        save_scope_as = xie_furen_scope
+    }
+    # 绑定徐达和谢氏的夫妻关系
+    scope:xu_da_scope = {
+        marry_character = scope:xie_furen_scope
     }
     # 刘伯温（刘基）- 传奇军师
     create_character = {
