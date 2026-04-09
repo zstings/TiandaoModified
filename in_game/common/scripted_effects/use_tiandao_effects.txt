@@ -50,6 +50,8 @@ generate_character_create_effect_mingchu = {
     create_named_dynasty = 沐
     create_named_dynasty = 张
     create_named_dynasty = 谢
+    create_named_dynasty = 郑
+    create_named_dynasty = 周
     # 蓝春应
     create_character = {
         dynasty = dynasty:蓝
@@ -185,7 +187,25 @@ generate_character_create_effect_mingchu = {
         religion = root.religion
         estate = estate_type:nobles_estate
         save_scope_as = li_shanchang_scope
-    } 
+    }
+    # 李善长-妻子郑氏
+    create_character = {
+        dynasty = 郑
+        adm = { 40 70 }
+        dip = { 40 70 }
+        mil = { 30 60 }
+        first_name = 氏
+        age = 38
+        female = yes
+        culture = root.culture
+        religion = root.religion
+        estate = estate_type:nobles_estate
+        save_scope_as = zheng_shi_scope
+    }
+    # 绑定李善长和郑氏的夫妻关系
+    scope:li_shanchang_scope = {
+        marry_character = scope:zheng_shi_scope
+    }
     # 汤和 - 朱元璋发小
     create_character = {
         dynasty = 汤
@@ -199,6 +219,24 @@ generate_character_create_effect_mingchu = {
         religion = root.religion
         estate = estate_type:nobles_estate
         save_scope_as = tang_he_scope
+    }
+    # 汤和-妻子周氏
+    create_character = {
+        dynasty = 周
+        adm = { 40 70 }
+        dip = { 40 70 }
+        mil = { 30 60 }
+        first_name = 氏
+        age = 27
+        female = yes
+        culture = root.culture
+        religion = root.religion
+        estate = estate_type:nobles_estate
+        save_scope_as = zhou_shi_scope
+    }
+    # 绑定汤和和周氏的夫妻关系
+    scope:tang_he_scope = {
+        marry_character = scope:zhou_shi_scope
     }
     # 邓愈 - 开国六王
     create_character = {
