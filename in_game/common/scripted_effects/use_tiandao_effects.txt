@@ -31,6 +31,9 @@ generate_character_create_effect = {
 
 
 # 定义明初武将家族关系
+# 这个角色的信息基准是红巾军起义-朱元璋事件选择朱元璋后
+# 国家由元改为明时，游戏时间越1355年（不一定准）
+# 以朱元璋27岁时为基准（比1355年靠谱一些）
 generate_character_create_effect_mingchu = {
     # 创建宗族
     create_named_dynasty = 常
