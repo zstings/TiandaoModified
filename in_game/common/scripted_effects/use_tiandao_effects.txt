@@ -34,7 +34,7 @@ generate_character_create_effect = {
 # 这个角色的信息基准是红巾军起义-朱元璋事件选择朱元璋后
 # 国家由元改为明时，游戏时间越1355年（不一定准）
 # 以朱元璋27岁时为基准（比1355年靠谱一些）
-generate_character_create_effect_mingchu = {
+generate_character_create_effect_mingchu_v = {
     # 创建宗族
     create_named_dynasty = 常
     create_named_dynasty = 蓝
@@ -321,5 +321,78 @@ generate_character_create_effect_mingchu = {
         religion = root.religion
         estate = estate_type:nobles_estate
         save_scope_as = mu_ying_scope
+    }
+}
+generate_character_create_effect_mingchu = {
+    if = {
+        limit = {
+            tag = MNG
+            NOT = { has_global_variable = xu_da_scope }
+        }
+        create_named_dynasty = 徐
+        create_character = {
+            dynasty = dynasty:徐
+            adm = { 40 70 }
+            dip = { 40 70 }
+            mil = { 80 99 }
+            first_name = 达
+            age = 23
+            female = no
+            culture = root.culture
+            religion = root.religion
+            estate = estate_type:nobles_estate
+            save_scope_as = xu_da_scope
+            set_global_variable = { name = xu_da_scope value = scope:xu_da_scope }
+        }
+    }
+    if = {
+        limit = {
+            tag = MNG
+            current_date >= 1356.6.1
+            NOT = { has_global_variable = xu_miaoyun_scope }
+        }
+        create_named_dynasty = 徐
+        create_character = {
+            dynasty = dynasty:徐
+            adm = { 40 70 }
+            dip = { 50 80 }
+            mil = { 20 40 }
+            first_name = 妙云
+            birth_date = 1356.6.18
+            female = yes
+            culture = root.culture
+            religion = root.religion
+            estate = estate_type:nobles_estate
+            father = global_var:xu_da_scope
+            save_scope_as = xu_miaoyun_scope
+            set_global_variable = { name = xu_miaoyun_scope value = scope:xu_miaoyun_scope }
+        }
+    }
+}
+
+
+generate_character_create_effect_ccc1 = {
+    create_named_dynasty = 徐
+    create_character = {
+        dynasty = dynasty:徐
+        first_name = 达7
+        age = 23
+        female = no
+        culture = root.culture
+        religion = root.religion
+        estate = estate_type:nobles_estate
+        save_scope_as = test_dad
+        set_global_variable = { name = test_dad_var value = scope:test_dad }
+    }
+    # 用 var: 引用
+    create_character = {
+        dynasty = dynasty:徐
+        first_name = 爱看
+        age = 1
+        female = yes
+        culture = root.culture
+        religion = root.religion
+        estate = estate_type:nobles_estate
+        father = global_var:test_dad_var
     }
 }

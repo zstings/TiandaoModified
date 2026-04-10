@@ -7,13 +7,11 @@ monthly_country_pulse = {
 }
 
 my_mingchu_character_spawn = {
-    # 只有国家是明初 且 没有创建过时执行
+    # 只有国家是明
     trigger = {
         tag = MNG
-        NOT = { has_global_variable = mingchu_characters_spawned }
     }
     effect = {
         generate_character_create_effect_mingchu
-        set_global_variable = { name = mingchu_characters_spawned; value = yes }
     }
 }
