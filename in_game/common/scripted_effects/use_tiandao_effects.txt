@@ -81,6 +81,19 @@ generate_character_create_effect_mingchu = {
             set_global_variable = { name = xie_furen_scope value = scope:xie_furen_scope }
         }
     }
+    # 绑定徐达和谢氏的夫妻关系
+    if = {
+        limit = { 
+            current_date >= 1361.6.1
+            has_global_variable = xu_da_scope
+            has_global_variable = xie_furen_scope
+            NOT = { has_global_variable = xu_da_xie_furen }
+        }
+        global_var:xu_da_scope = {
+            marry_character = global_var:xie_furen_scope
+        }
+        set_global_variable = { name = xu_da_xie_furen value = yes }
+    }
     # 徐妙云（长女，明成祖仁孝文皇后）
     if = {
         limit = {
@@ -249,19 +262,6 @@ generate_character_create_effect_mingchu = {
             set_global_variable = { name = xu_miaojin_scope value = scope:xu_miaojin_scope }
         }
     }
-    # 绑定徐达和谢氏的夫妻关系
-    if = {
-        limit = { 
-            current_date >= 1361.6.1
-            has_global_variable = xu_da_scope
-            has_global_variable = xie_furen_scope
-            NOT = { has_global_variable = xu_da_xie_furen }
-        }
-        global_var:xu_da_scope = {
-            marry_character = global_var:xie_furen_scope
-        }
-        set_global_variable = { name = xu_da_xie_furen value = yes }
-    }
     #-----常遇春家族-----
     # 常遇春
     if = {
@@ -284,6 +284,29 @@ generate_character_create_effect_mingchu = {
             estate = estate_type:nobles_estate
             save_scope_as = chang_yuchun_scope
             set_global_variable = { name = chang_yuchun_scope value = scope:chang_yuchun_scope }
+        }
+    }
+    # 蓝月娥（常遇春妻-蓝玉之姐）
+    if = {
+        limit = {
+            tag = MNG
+            current_date >= 1332.6.1
+            NOT = { has_global_variable = lan_yuee_scope }
+        }
+        create_character = {
+            dynasty = dynasty:蓝
+            adm = { 40 70 }
+            dip = { 40 70 }
+            mil = { 30 60 }
+            first_name = 月娥
+            birth_date = 1332.6.1
+            female = yes
+            culture = root.culture
+            religion = root.religion
+            estate = estate_type:nobles_estate
+            father = global_var:lan_chun_scope
+            save_scope_as = lan_yuee_scope
+            set_global_variable = { name = lan_yuee_scope value = scope:lan_yuee_scope }
         }
     }
     # 绑定常遇春和蓝月娥的夫妻关系
@@ -417,29 +440,6 @@ generate_character_create_effect_mingchu = {
             estate = estate_type:nobles_estate
             save_scope_as = lan_chun_scope
             set_global_variable = { name = lan_chun_scope value = scope:lan_chun_scope }
-        }
-    }
-    # 蓝月娥（蓝玉之姐）
-    if = {
-        limit = {
-            tag = MNG
-            current_date >= 1332.6.1
-            NOT = { has_global_variable = lan_yuee_scope }
-        }
-        create_character = {
-            dynasty = dynasty:蓝
-            adm = { 40 70 }
-            dip = { 40 70 }
-            mil = { 30 60 }
-            first_name = 月娥
-            birth_date = 1332.6.1
-            female = yes
-            culture = root.culture
-            religion = root.religion
-            estate = estate_type:nobles_estate
-            father = global_var:lan_chun_scope
-            save_scope_as = lan_yuee_scope
-            set_global_variable = { name = lan_yuee_scope value = scope:lan_yuee_scope }
         }
     }
     # 蓝玉
