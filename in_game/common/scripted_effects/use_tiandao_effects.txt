@@ -545,10 +545,12 @@ generate_character_create_effect_mingchu = {
             current_date >= 1361.6.1
             has_global_variable = xu_da_scope
             has_global_variable = xie_furen_scope
+            NOT = { has_global_variable = xu_da_xie_furen }
         }
         scope:xu_da_scope = {
             marry_character = global_var:xie_furen_scope
         }
+        set_global_variable = { name = xu_da_xie_furen; value = yes }
     }
 }
 
