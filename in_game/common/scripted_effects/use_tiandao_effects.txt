@@ -1647,7 +1647,7 @@ generate_character_create_effect_mingchu = {
         }
         set_global_variable = { name = feng_guoyong_feng_guoyong_furen; value = yes }
     }
-    # 冯诚（冯国用之子，冯胜之侄）
+    # 冯诚（长子，冯胜之侄）
     if = {
         limit = {
             tag = MNG
@@ -1669,6 +1669,30 @@ generate_character_create_effect_mingchu = {
             mother = global_var:feng_guoyong_furen_scope
             save_scope_as = feng_cheng_scope
             set_global_variable = { name = feng_cheng_scope value = scope:feng_cheng_scope }
+        }
+    }
+    # 冯秀秀（长女，沐英原配）
+    if = {
+        limit = {
+            tag = MNG
+            current_date >= 1347.6.1
+            NOT = { has_global_variable = feng_xiuxiu_scope }
+        }
+        create_character = {
+            dynasty = dynasty:冯
+            adm = { 40 70 }
+            dip = { 40 70 }
+            mil = { 30 60 }
+            first_name = 秀秀
+            birth_date = 1347.6.1
+            female = yes
+            culture = root.culture
+            religion = root.religion
+            estate = estate_type:nobles_estate
+            father = global_var:feng_guoyong_scope
+            mother = global_var:feng_guoyong_furen_scope
+            save_scope_as = feng_xiuxiu_scope
+            set_global_variable = { name = feng_xiuxiu_scope value = scope:feng_xiuxiu_scope }
         }
     }
     # 冯胜
@@ -2054,28 +2078,6 @@ generate_character_create_effect_mingchu = {
             estate = estate_type:nobles_estate
             save_scope_as = mu_ying_scope
             set_global_variable = { name = mu_ying_scope value = scope:mu_ying_scope }
-        }
-    }
-    # 冯秀秀（冯国用之女，沐英原配）
-    if = {
-        limit = {
-            tag = MNG
-            current_date >= 1347.6.1
-            NOT = { has_global_variable = feng_xiuxiu_scope }
-        }
-        create_character = {
-            dynasty = dynasty:冯
-            adm = { 40 70 }
-            dip = { 40 70 }
-            mil = { 30 60 }
-            first_name = 秀秀
-            birth_date = 1347.6.1
-            female = yes
-            culture = root.culture
-            religion = root.religion
-            estate = estate_type:nobles_estate
-            save_scope_as = feng_xiuxiu_scope
-            set_global_variable = { name = feng_xiuxiu_scope value = scope:feng_xiuxiu_scope }
         }
     }
     # 耿婉清（耿炳文之妹，沐英继室）
