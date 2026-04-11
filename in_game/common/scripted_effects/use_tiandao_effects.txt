@@ -293,6 +293,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1332.6.1
             NOT = { has_global_variable = lan_yuee_scope }
         }
+        create_named_dynasty = 蓝
         create_character = {
             dynasty = dynasty:蓝
             adm = { 40 70 }
