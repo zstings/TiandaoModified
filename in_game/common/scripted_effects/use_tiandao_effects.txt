@@ -1612,6 +1612,65 @@ generate_character_create_effect_mingchu = {
             set_global_variable = { name = feng_guoyong_scope value = scope:feng_guoyong_scope }
         }
     }
+    # 冯国用妻子
+    if = {
+        limit = {
+            tag = MNG
+            current_date >= 1325.6.1
+            NOT = { has_global_variable = feng_guoyong_furen_scope }
+        }
+        create_character = {
+            dynasty = dynasty:冯
+            adm = { 40 70 }
+            dip = { 40 70 }
+            mil = { 30 60 }
+            first_name = 氏
+            birth_date = 1325.6.1
+            female = yes
+            culture = root.culture
+            religion = root.religion
+            estate = estate_type:nobles_estate
+            save_scope_as = feng_guoyong_furen_scope
+            set_global_variable = { name = feng_guoyong_furen_scope value = scope:feng_guoyong_furen_scope }
+        }
+    }
+    # 绑定冯国用和冯氏的夫妻关系
+    if = {
+        limit = { 
+            current_date >= 1343.6.1
+            has_global_variable = feng_guoyong_scope
+            has_global_variable = feng_guoyong_furen_scope
+            NOT = { has_global_variable = feng_guoyong_feng_guoyong_furen }
+        }
+        scope:feng_guoyong_scope = {
+            marry_character = global_var:feng_guoyong_furen_scope
+        }
+        set_global_variable = { name = feng_guoyong_feng_guoyong_furen; value = yes }
+    }
+    # 冯诚（冯国用之子，冯胜之侄）
+    if = {
+        limit = {
+            tag = MNG
+            current_date >= 1344.6.1
+            NOT = { has_global_variable = feng_cheng_scope }
+        }
+        create_character = {
+            dynasty = dynasty:冯
+            adm = { 40 70 }
+            dip = { 30 60 }
+            mil = { 50 80 }
+            first_name = 诚
+            birth_date = 1344.6.1
+            female = no
+            culture = root.culture
+            religion = root.religion
+            estate = estate_type:nobles_estate
+            father = global_var:feng_guoyong_scope
+            mother = global_var:feng_guoyong_furen_scope
+            save_scope_as = feng_cheng_scope
+            set_global_variable = { name = feng_cheng_scope value = scope:feng_cheng_scope }
+        }
+    }
     # 冯胜
     if = {
         limit = {
@@ -1668,28 +1727,6 @@ generate_character_create_effect_mingchu = {
             marry_character = global_var:feng_sheng_furen_scope
         }
         set_global_variable = { name = feng_sheng_feng_sheng_furen; value = yes }
-    }
-    # 冯诚（冯国用之子，冯胜之侄）
-    if = {
-        limit = {
-            tag = MNG
-            current_date >= 1344.6.1
-            NOT = { has_global_variable = feng_cheng_scope }
-        }
-        create_character = {
-            dynasty = dynasty:冯
-            adm = { 40 70 }
-            dip = { 30 60 }
-            mil = { 50 80 }
-            first_name = 诚
-            birth_date = 1344.6.1
-            female = no
-            culture = root.culture
-            religion = root.religion
-            estate = estate_type:nobles_estate
-            save_scope_as = feng_cheng_scope
-            set_global_variable = { name = feng_cheng_scope value = scope:feng_cheng_scope }
-        }
     }
     # 冯婉宁（长女）
     if = {
@@ -2096,6 +2133,7 @@ generate_character_create_effect_mingchu = {
             religion = root.religion
             estate = estate_type:nobles_estate
             father = global_var:mu_ying_scope
+            mother = global_var:feng_xiuxiu_scope
             save_scope_as = mu_chun_scope
             set_global_variable = { name = mu_chun_scope value = scope:mu_chun_scope }
         }
@@ -2132,6 +2170,7 @@ generate_character_create_effect_mingchu = {
             religion = root.religion
             estate = estate_type:nobles_estate
             father = global_var:mu_ying_scope
+            mother = global_var:geng_wanqing_scope
             save_scope_as = mu_sheng_scope
             set_global_variable = { name = mu_sheng_scope value = scope:mu_sheng_scope }
         }
@@ -2155,6 +2194,7 @@ generate_character_create_effect_mingchu = {
             religion = root.religion
             estate = estate_type:nobles_estate
             father = global_var:mu_ying_scope
+            mother = global_var:geng_wanqing_scope
             save_scope_as = mu_ang_scope
             set_global_variable = { name = mu_ang_scope value = scope:mu_ang_scope }
         }
@@ -2178,6 +2218,7 @@ generate_character_create_effect_mingchu = {
             religion = root.religion
             estate = estate_type:nobles_estate
             father = global_var:mu_ying_scope
+            mother = global_var:geng_wanqing_scope
             save_scope_as = mu_xin_scope
             set_global_variable = { name = mu_xin_scope value = scope:mu_xin_scope }
         }
@@ -2201,6 +2242,7 @@ generate_character_create_effect_mingchu = {
             religion = root.religion
             estate = estate_type:nobles_estate
             father = global_var:mu_ying_scope
+            mother = global_var:geng_wanqing_scope
             save_scope_as = mu_wanhua_scope
             set_global_variable = { name = mu_wanhua_scope value = scope:mu_wanhua_scope }
         }
@@ -2224,6 +2266,7 @@ generate_character_create_effect_mingchu = {
             religion = root.religion
             estate = estate_type:nobles_estate
             father = global_var:mu_ying_scope
+            mother = global_var:geng_wanqing_scope
             save_scope_as = mu_wanxiu_scope
             set_global_variable = { name = mu_wanxiu_scope value = scope:mu_wanxiu_scope }
         }
