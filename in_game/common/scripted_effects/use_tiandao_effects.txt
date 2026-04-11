@@ -348,7 +348,7 @@ generate_character_create_effect_mingchu = {
             set_global_variable = { name = xu_da_scope value = scope:xu_da_scope }
         }
     }
-    # 徐达妻子谢氏
+    # 徐达妻子谢翠娥
     if = {
         limit = {
             tag = MNG
@@ -361,7 +361,7 @@ generate_character_create_effect_mingchu = {
             adm = { 40 70 }
             dip = { 40 70 }
             mil = { 30 60 }
-            first_name = 氏
+            first_name = 翠娥
             birth_date = 1334.6.1
             female = yes
             culture = root.culture
