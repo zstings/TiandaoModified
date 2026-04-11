@@ -1826,6 +1826,19 @@ generate_character_create_effect_mingchu = {
         }
         set_global_variable = { name = mu_ying_feng_xiuxiu value = yes }
     }
+    # 绑定沐英和耿婉清的夫妻关系（继室）
+    if = {
+        limit = { 
+            current_date >= 1365.6.1
+            has_global_variable = mu_ying_scope
+            has_global_variable = geng_wanqing_scope
+            NOT = { has_global_variable = mu_ying_geng_wanqing }
+        }
+        global_var:mu_ying_scope = {
+            marry_character = global_var:geng_wanqing_scope
+        }
+        set_global_variable = { name = mu_ying_geng_wanqing value = yes }
+    }
     # 沐春（长子，冯氏所出）
     if = {
         limit = {
@@ -1849,19 +1862,6 @@ generate_character_create_effect_mingchu = {
             save_scope_as = mu_chun_scope
             set_global_variable = { name = mu_chun_scope value = scope:mu_chun_scope }
         }
-    }
-    # 绑定沐英和耿婉清的夫妻关系（继室）
-    if = {
-        limit = { 
-            current_date >= 1365.6.1
-            has_global_variable = mu_ying_scope
-            has_global_variable = geng_wanqing_scope
-            NOT = { has_global_variable = mu_ying_geng_wanqing }
-        }
-        global_var:mu_ying_scope = {
-            marry_character = global_var:geng_wanqing_scope
-        }
-        set_global_variable = { name = mu_ying_geng_wanqing value = yes }
     }
     # 沐晟（次子，耿氏所出）
     if = {
