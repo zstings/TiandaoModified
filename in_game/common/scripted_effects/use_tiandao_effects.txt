@@ -1075,6 +1075,519 @@ generate_character_create_effect_mingchu = {
             set_global_variable = { name = li_cunyi_scope value = scope:li_cunyi_scope }
         }
     }
+    #-----汤和家族-----
+    # 汤和
+    if = {
+        limit = {
+            tag = MNG
+            current_date >= 1326.6.1
+            NOT = { has_global_variable = tang_he_scope }
+        }
+        create_named_dynasty = 汤
+        create_character = {
+            dynasty = dynasty:汤
+            adm = { 40 70 }
+            dip = { 50 80 }
+            mil = { 65 90 }
+            first_name = 和
+            birth_date = 1326.6.1
+            female = no
+            culture = root.culture
+            religion = root.religion
+            estate = estate_type:nobles_estate
+            save_scope_as = tang_he_scope
+            set_global_variable = { name = tang_he_scope value = scope:tang_he_scope }
+        }
+    }
+    # 汤和妻子胡婉如
+    if = {
+        limit = {
+            tag = MNG
+            current_date >= 1328.6.1
+            NOT = { has_global_variable = hu_wanru_scope }
+        }
+        create_named_dynasty = 胡
+        create_character = {
+            dynasty = dynasty:胡
+            adm = { 40 70 }
+            dip = { 40 70 }
+            mil = { 30 60 }
+            first_name = 婉如
+            birth_date = 1328.6.1
+            female = yes
+            culture = root.culture
+            religion = root.religion
+            estate = estate_type:nobles_estate
+            save_scope_as = hu_wanru_scope
+            set_global_variable = { name = hu_wanru_scope value = scope:hu_wanru_scope }
+        }
+    }
+    # 绑定汤和和胡婉如的夫妻关系
+    if = {
+        limit = { 
+            current_date >= 1345.6.1
+            has_global_variable = tang_he_scope
+            has_global_variable = hu_wanru_scope
+            NOT = { has_global_variable = tang_he_hu_wanru }
+        }
+        scope:tang_he_scope = {
+            marry_character = global_var:hu_wanru_scope
+        }
+        set_global_variable = { name = tang_he_hu_wanru; value = yes }
+    }
+    # 汤鼎（长子）
+    if = {
+        limit = {
+            tag = MNG
+            current_date >= 1346.6.1
+            NOT = { has_global_variable = tang_ding_scope }
+        }
+        create_character = {
+            dynasty = dynasty:汤
+            adm = { 40 70 }
+            dip = { 30 60 }
+            mil = { 50 80 }
+            first_name = 鼎
+            birth_date = 1346.6.1
+            female = no
+            culture = root.culture
+            religion = root.religion
+            estate = estate_type:nobles_estate
+            father = global_var:tang_he_scope
+            mother = global_var:hu_wanru_scope
+            save_scope_as = tang_ding_scope
+            set_global_variable = { name = tang_ding_scope value = scope:tang_ding_scope }
+        }
+    }
+    # 汤軏（次子）
+    if = {
+        limit = {
+            tag = MNG
+            current_date >= 1348.6.1
+            NOT = { has_global_variable = tang_yue_scope }
+        }
+        create_character = {
+            dynasty = dynasty:汤
+            adm = { 40 70 }
+            dip = { 30 60 }
+            mil = { 40 70 }
+            first_name = 軏
+            birth_date = 1348.6.1
+            female = no
+            culture = root.culture
+            religion = root.religion
+            estate = estate_type:nobles_estate
+            father = global_var:tang_he_scope
+            mother = global_var:hu_wanru_scope
+            save_scope_as = tang_yue_scope
+            set_global_variable = { name = tang_yue_scope value = scope:tang_yue_scope }
+        }
+    }
+    # 汤醴（五子）
+    if = {
+        limit = {
+            tag = MNG
+            current_date >= 1354.6.1
+            NOT = { has_global_variable = tang_li_scope }
+        }
+        create_character = {
+            dynasty = dynasty:汤
+            adm = { 30 60 }
+            dip = { 30 60 }
+            mil = { 40 70 }
+            first_name = 醴
+            birth_date = 1354.6.1
+            female = no
+            culture = root.culture
+            religion = root.religion
+            estate = estate_type:nobles_estate
+            father = global_var:tang_he_scope
+            mother = global_var:hu_wanru_scope
+            save_scope_as = tang_li_scope
+            set_global_variable = { name = tang_li_scope value = scope:tang_li_scope }
+        }
+    }
+    # 汤婉仪（长女）
+    if = {
+        limit = {
+            tag = MNG
+            current_date >= 1345.6.1
+            NOT = { has_global_variable = tang_wanyi_scope }
+        }
+        create_character = {
+            dynasty = dynasty:汤
+            adm = { 40 70 }
+            dip = { 40 70 }
+            mil = { 20 40 }
+            first_name = 婉仪
+            birth_date = 1345.6.1
+            female = yes
+            culture = root.culture
+            religion = root.religion
+            estate = estate_type:nobles_estate
+            father = global_var:tang_he_scope
+            mother = global_var:hu_wanru_scope
+            save_scope_as = tang_wanyi_scope
+            set_global_variable = { name = tang_wanyi_scope value = scope:tang_wanyi_scope }
+        }
+    }
+    # 汤淑华（次女）
+    if = {
+        limit = {
+            tag = MNG
+            current_date >= 1347.6.1
+            NOT = { has_global_variable = tang_shuhua_scope }
+        }
+        create_character = {
+            dynasty = dynasty:汤
+            adm = { 40 70 }
+            dip = { 40 70 }
+            mil = { 20 40 }
+            first_name = 淑华
+            birth_date = 1347.6.1
+            female = yes
+            culture = root.culture
+            religion = root.religion
+            estate = estate_type:nobles_estate
+            father = global_var:tang_he_scope
+            mother = global_var:hu_wanru_scope
+            save_scope_as = tang_shuhua_scope
+            set_global_variable = { name = tang_shuhua_scope value = scope:tang_shuhua_scope }
+        }
+    }
+    # 汤淑兰（三女）
+    if = {
+        limit = {
+            tag = MNG
+            current_date >= 1349.6.1
+            NOT = { has_global_variable = tang_shulan_scope }
+        }
+        create_character = {
+            dynasty = dynasty:汤
+            adm = { 40 70 }
+            dip = { 40 70 }
+            mil = { 20 40 }
+            first_name = 淑兰
+            birth_date = 1349.6.1
+            female = yes
+            culture = root.culture
+            religion = root.religion
+            estate = estate_type:nobles_estate
+            father = global_var:tang_he_scope
+            mother = global_var:hu_wanru_scope
+            save_scope_as = tang_shulan_scope
+            set_global_variable = { name = tang_shulan_scope value = scope:tang_shulan_scope }
+        }
+    }
+    # 汤淑芳（四女）
+    if = {
+        limit = {
+            tag = MNG
+            current_date >= 1351.6.1
+            NOT = { has_global_variable = tang_shufang_scope }
+        }
+        create_character = {
+            dynasty = dynasty:汤
+            adm = { 40 70 }
+            dip = { 40 70 }
+            mil = { 20 40 }
+            first_name = 淑芳
+            birth_date = 1351.6.1
+            female = yes
+            culture = root.culture
+            religion = root.religion
+            estate = estate_type:nobles_estate
+            father = global_var:tang_he_scope
+            mother = global_var:hu_wanru_scope
+            save_scope_as = tang_shufang_scope
+            set_global_variable = { name = tang_shufang_scope value = scope:tang_shufang_scope }
+        }
+    }
+    # 汤淑莲（五女）
+    if = {
+        limit = {
+            tag = MNG
+            current_date >= 1353.6.1
+            NOT = { has_global_variable = tang_shulian_scope }
+        }
+        create_character = {
+            dynasty = dynasty:汤
+            adm = { 40 70 }
+            dip = { 40 70 }
+            mil = { 20 40 }
+            first_name = 淑莲
+            birth_date = 1353.6.1
+            female = yes
+            culture = root.culture
+            religion = root.religion
+            estate = estate_type:nobles_estate
+            father = global_var:tang_he_scope
+            mother = global_var:hu_wanru_scope
+            save_scope_as = tang_shulian_scope
+            set_global_variable = { name = tang_shulian_scope value = scope:tang_shulian_scope }
+        }
+    }
+    #-----邓愈家族-----
+    # 邓愈
+    if = {
+        limit = {
+            tag = MNG
+            current_date >= 1337.6.1
+            NOT = { has_global_variable = deng_yu_scope }
+        }
+        create_named_dynasty = 邓
+        create_character = {
+            dynasty = dynasty:邓
+            adm = { 40 70 }
+            dip = { 40 70 }
+            mil = { 65 90 }
+            first_name = 愈
+            birth_date = 1337.6.1
+            female = no
+            culture = root.culture
+            religion = root.religion
+            estate = estate_type:nobles_estate
+            save_scope_as = deng_yu_scope
+            set_global_variable = { name = deng_yu_scope value = scope:deng_yu_scope }
+        }
+    }
+    # 邓愈妻子曹婉仪
+    if = {
+        limit = {
+            tag = MNG
+            current_date >= 1339.6.1
+            NOT = { has_global_variable = cao_wanyi_scope }
+        }
+        create_named_dynasty = 曹
+        create_character = {
+            dynasty = dynasty:曹
+            adm = { 40 70 }
+            dip = { 40 70 }
+            mil = { 30 60 }
+            first_name = 婉仪
+            birth_date = 1339.6.1
+            female = yes
+            culture = root.culture
+            religion = root.religion
+            estate = estate_type:nobles_estate
+            save_scope_as = cao_wanyi_scope
+            set_global_variable = { name = cao_wanyi_scope value = scope:cao_wanyi_scope }
+        }
+    }
+    # 绑定邓愈和曹婉仪的夫妻关系
+    if = {
+        limit = { 
+            current_date >= 1356.6.1
+            has_global_variable = deng_yu_scope
+            has_global_variable = cao_wanyi_scope
+            NOT = { has_global_variable = deng_yu_cao_wanyi }
+        }
+        scope:deng_yu_scope = {
+            marry_character = global_var:cao_wanyi_scope
+        }
+        set_global_variable = { name = deng_yu_cao_wanyi; value = yes }
+    }
+    # 邓镇（长子）
+    if = {
+        limit = {
+            tag = MNG
+            current_date >= 1357.6.1
+            NOT = { has_global_variable = deng_zhen_scope }
+        }
+        create_character = {
+            dynasty = dynasty:邓
+            adm = { 40 70 }
+            dip = { 30 60 }
+            mil = { 50 80 }
+            first_name = 镇
+            birth_date = 1357.6.1
+            female = no
+            culture = root.culture
+            religion = root.religion
+            estate = estate_type:nobles_estate
+            father = global_var:deng_yu_scope
+            mother = global_var:cao_wanyi_scope
+            save_scope_as = deng_zhen_scope
+            set_global_variable = { name = deng_zhen_scope value = scope:deng_zhen_scope }
+        }
+    }
+    # 邓铭（次子）
+    if = {
+        limit = {
+            tag = MNG
+            current_date >= 1359.6.1
+            NOT = { has_global_variable = deng_ming_scope }
+        }
+        create_character = {
+            dynasty = dynasty:邓
+            adm = { 30 60 }
+            dip = { 30 60 }
+            mil = { 40 70 }
+            first_name = 铭
+            birth_date = 1359.6.1
+            female = no
+            culture = root.culture
+            religion = root.religion
+            estate = estate_type:nobles_estate
+            father = global_var:deng_yu_scope
+            mother = global_var:cao_wanyi_scope
+            save_scope_as = deng_ming_scope
+            set_global_variable = { name = deng_ming_scope value = scope:deng_ming_scope }
+        }
+    }
+    # 邓冔（弟）
+    if = {
+        limit = {
+            tag = MNG
+            current_date >= 1339.6.1
+            NOT = { has_global_variable = deng_xu_scope }
+        }
+        create_character = {
+            dynasty = dynasty:邓
+            adm = { 40 70 }
+            dip = { 40 70 }
+            mil = { 30 60 }
+            first_name = 冔
+            birth_date = 1339.6.1
+            female = no
+            culture = root.culture
+            religion = root.religion
+            estate = estate_type:nobles_estate
+            save_scope_as = deng_xu_scope
+            set_global_variable = { name = deng_xu_scope value = scope:deng_xu_scope }
+        }
+    }
+    #-----傅友德家族-----
+    # 傅友德
+    if = {
+        limit = {
+            tag = MNG
+            current_date >= 1329.6.1
+            NOT = { has_global_variable = fu_youde_scope }
+        }
+        create_named_dynasty = 傅
+        create_character = {
+            dynasty = dynasty:傅
+            adm = { 35 65 }
+            dip = { 40 70 }
+            mil = { 75 99 }
+            first_name = 友德
+            birth_date = 1329.6.1
+            female = no
+            culture = root.culture
+            religion = root.religion
+            estate = estate_type:nobles_estate
+            save_scope_as = fu_youde_scope
+            set_global_variable = { name = fu_youde_scope value = scope:fu_youde_scope }
+        }
+    }
+    # 傅友德妻子傅夫人
+    if = {
+        limit = {
+            tag = MNG
+            current_date >= 1331.6.1
+            NOT = { has_global_variable = fuyoude_furen_scope }
+        }
+        create_character = {
+            dynasty = dynasty:傅
+            adm = { 40 70 }
+            dip = { 40 70 }
+            mil = { 30 60 }
+            first_name = 夫人
+            birth_date = 1331.6.1
+            female = yes
+            culture = root.culture
+            religion = root.religion
+            estate = estate_type:nobles_estate
+            save_scope_as = fuyoude_furen_scope
+            set_global_variable = { name = fuyoude_furen_scope value = scope:fuyoude_furen_scope }
+        }
+    }
+    # 绑定傅友德和傅夫人的夫妻关系
+    if = {
+        limit = { 
+            current_date >= 1348.6.1
+            has_global_variable = fu_youde_scope
+            has_global_variable = fuyoude_furen_scope
+            NOT = { has_global_variable = fu_youde_fuyoude_furen }
+        }
+        scope:fu_youde_scope = {
+            marry_character = global_var:fuyoude_furen_scope
+        }
+        set_global_variable = { name = fu_youde_fuyoude_furen; value = yes }
+    }
+    # 傅忠（长子）
+    if = {
+        limit = {
+            tag = MNG
+            current_date >= 1349.6.1
+            NOT = { has_global_variable = fu_zhong_scope }
+        }
+        create_character = {
+            dynasty = dynasty:傅
+            adm = { 40 70 }
+            dip = { 30 60 }
+            mil = { 50 80 }
+            first_name = 忠
+            birth_date = 1349.6.1
+            female = no
+            culture = root.culture
+            religion = root.religion
+            estate = estate_type:nobles_estate
+            father = global_var:fu_youde_scope
+            mother = global_var:fuyoude_furen_scope
+            save_scope_as = fu_zhong_scope
+            set_global_variable = { name = fu_zhong_scope value = scope:fu_zhong_scope }
+        }
+    }
+    # 傅让（次子）
+    if = {
+        limit = {
+            tag = MNG
+            current_date >= 1351.6.1
+            NOT = { has_global_variable = fu_rang_scope }
+        }
+        create_character = {
+            dynasty = dynasty:傅
+            adm = { 30 60 }
+            dip = { 30 60 }
+            mil = { 40 70 }
+            first_name = 让
+            birth_date = 1351.6.1
+            female = no
+            culture = root.culture
+            religion = root.religion
+            estate = estate_type:nobles_estate
+            father = global_var:fu_youde_scope
+            mother = global_var:fuyoude_furen_scope
+            save_scope_as = fu_rang_scope
+            set_global_variable = { name = fu_rang_scope value = scope:fu_rang_scope }
+        }
+    }
+    # 傅婉容（长女）
+    if = {
+        limit = {
+            tag = MNG
+            current_date >= 1348.6.1
+            NOT = { has_global_variable = fu_wanrong_scope }
+        }
+        create_character = {
+            dynasty = dynasty:傅
+            adm = { 40 70 }
+            dip = { 40 70 }
+            mil = { 20 40 }
+            first_name = 婉容
+            birth_date = 1348.6.1
+            female = yes
+            culture = root.culture
+            religion = root.religion
+            estate = estate_type:nobles_estate
+            father = global_var:fu_youde_scope
+            mother = global_var:fuyoude_furen_scope
+            save_scope_as = fu_wanrong_scope
+            set_global_variable = { name = fu_wanrong_scope value = scope:fu_wanrong_scope }
+        }
+    }
 }
 
 
