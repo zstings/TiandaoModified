@@ -576,29 +576,6 @@ generate_character_create_effect_mingchu = {
             set_global_variable = { name = chang_yuchun_scope value = scope:chang_yuchun_scope }
         }
     }
-    # 常遇春妻子蓝月娥
-    if = {
-        limit = {
-            tag = MNG
-            current_date >= 1332.6.1
-            NOT = { has_global_variable = lan_yuee_scope }
-        }
-        create_named_dynasty = 蓝
-        create_character = {
-            dynasty = dynasty:蓝
-            adm = { 40 70 }
-            dip = { 40 70 }
-            mil = { 30 60 }
-            first_name = 月娥
-            birth_date = 1332.6.1
-            female = yes
-            culture = root.culture
-            religion = root.religion
-            estate = estate_type:nobles_estate
-            save_scope_as = lan_yuee_scope
-            set_global_variable = { name = lan_yuee_scope value = scope:lan_yuee_scope }
-        }
-    }
     # 绑定常遇春和蓝月娥的夫妻关系
     if = {
         limit = { 
