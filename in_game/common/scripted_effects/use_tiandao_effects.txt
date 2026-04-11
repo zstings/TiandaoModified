@@ -370,13 +370,6 @@ generate_character_create_effect_mingchu = {
             save_scope_as = xie_furen_scope
             set_global_variable = { name = xie_furen_scope value = scope:xie_furen_scope }
         }
-        # 绑定徐达和谢氏的夫妻关系
-        if = {
-            limit = { has_global_variable = xu_da_scope }
-            scope:xu_da_scope = {
-                marry_character = global_var:xie_furen_scope
-            }
-        }
     }
     # 徐妙云（长女，明成祖仁孝文皇后）
     if = {
@@ -544,6 +537,17 @@ generate_character_create_effect_mingchu = {
             mother = global_var:xie_furen_scope
             save_scope_as = xu_miaojin_scope
             set_global_variable = { name = xu_miaojin_scope value = scope:xu_miaojin_scope }
+        }
+    }
+    # 绑定徐达和谢氏的夫妻关系
+    if = {
+        limit = { 
+            current_date >= 1361.6.1
+            has_global_variable = xu_da_scope
+            has_global_variable = xie_furen_scope
+        }
+        scope:xu_da_scope = {
+            marry_character = global_var:xie_furen_scope
         }
     }
 }
