@@ -324,6 +324,7 @@ generate_character_create_effect_mingchu_v = {
     }
 }
 generate_character_create_effect_mingchu = {
+    #-----徐达家族-----
     # 徐达
     if = {
         limit = {
@@ -354,6 +355,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1334.6.1
             NOT = { has_global_variable = xie_furen_scope }
         }
+        create_named_dynasty = 谢
         create_character = {
             dynasty = dynasty:谢
             adm = { 40 70 }
