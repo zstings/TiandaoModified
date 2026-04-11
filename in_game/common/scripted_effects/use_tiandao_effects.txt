@@ -257,10 +257,10 @@ generate_character_create_effect_mingchu = {
             has_global_variable = xie_furen_scope
             NOT = { has_global_variable = xu_da_xie_furen }
         }
-        scope:xu_da_scope = {
+        global_var:xu_da_scope = {
             marry_character = global_var:xie_furen_scope
         }
-        set_global_variable = { name = xu_da_xie_furen; value = yes }
+        set_global_variable = { name = xu_da_xie_furen value = yes }
     }
     #-----常遇春家族-----
     # 常遇春
@@ -294,10 +294,10 @@ generate_character_create_effect_mingchu = {
             has_global_variable = lan_yuee_scope
             NOT = { has_global_variable = chang_yuchun_lan_yuee }
         }
-        scope:chang_yuchun_scope = {
+        global_var:chang_yuchun_scope = {
             marry_character = global_var:lan_yuee_scope
         }
-        set_global_variable = { name = chang_yuchun_lan_yuee; value = yes }
+        set_global_variable = { name = chang_yuchun_lan_yuee value = yes }
     }
     # 常茂（长子）
     if = {
@@ -495,10 +495,10 @@ generate_character_create_effect_mingchu = {
             has_global_variable = lanyu_furen_scope
             NOT = { has_global_variable = lan_yu_lanyu_furen }
         }
-        scope:lan_yu_scope = {
+        global_var:lan_yu_scope = {
             marry_character = global_var:lanyu_furen_scope
         }
-        set_global_variable = { name = lan_yu_lanyu_furen; value = yes }
+        set_global_variable = { name = lan_yu_lanyu_furen value = yes }
     }
     # 蓝凌英（蓝玉之女）
     if = {
@@ -579,10 +579,10 @@ generate_character_create_effect_mingchu = {
             has_global_variable = chen_shuxian_scope
             NOT = { has_global_variable = liu_bowen_chen_shuxian }
         }
-        scope:liu_bowen_scope = {
+        global_var:liu_bowen_scope = {
             marry_character = global_var:chen_shuxian_scope
         }
-        set_global_variable = { name = liu_bowen_chen_shuxian; value = yes }
+        set_global_variable = { name = liu_bowen_chen_shuxian value = yes }
     }
     # 刘琏（长子）
     if = {
@@ -734,10 +734,10 @@ generate_character_create_effect_mingchu = {
             has_global_variable = lishanchang_furen_scope
             NOT = { has_global_variable = li_shanchang_lishanchang_furen }
         }
-        scope:li_shanchang_scope = {
+        global_var:li_shanchang_scope = {
             marry_character = global_var:lishanchang_furen_scope
         }
-        set_global_variable = { name = li_shanchang_lishanchang_furen; value = yes }
+        set_global_variable = { name = li_shanchang_lishanchang_furen value = yes }
     }
     # 李祺（长子）
     if = {
@@ -840,10 +840,10 @@ generate_character_create_effect_mingchu = {
             has_global_variable = hu_wanru_scope
             NOT = { has_global_variable = tang_he_hu_wanru }
         }
-        scope:tang_he_scope = {
+        global_var:tang_he_scope = {
             marry_character = global_var:hu_wanru_scope
         }
-        set_global_variable = { name = tang_he_hu_wanru; value = yes }
+        set_global_variable = { name = tang_he_hu_wanru value = yes }
     }
     # 汤鼎（长子）
     if = {
@@ -1092,10 +1092,10 @@ generate_character_create_effect_mingchu = {
             has_global_variable = cao_wanyi_scope
             NOT = { has_global_variable = deng_yu_cao_wanyi }
         }
-        scope:deng_yu_scope = {
+        global_var:deng_yu_scope = {
             marry_character = global_var:cao_wanyi_scope
         }
-        set_global_variable = { name = deng_yu_cao_wanyi; value = yes }
+        set_global_variable = { name = deng_yu_cao_wanyi value = yes }
     }
     # 邓镇（长子）
     if = {
@@ -1221,10 +1221,10 @@ generate_character_create_effect_mingchu = {
             has_global_variable = fuyoude_furen_scope
             NOT = { has_global_variable = fu_youde_fuyoude_furen }
         }
-        scope:fu_youde_scope = {
+        global_var:fu_youde_scope = {
             marry_character = global_var:fuyoude_furen_scope
         }
-        set_global_variable = { name = fu_youde_fuyoude_furen; value = yes }
+        set_global_variable = { name = fu_youde_fuyoude_furen value = yes }
     }
     # 傅忠（长子）
     if = {
@@ -1352,10 +1352,10 @@ generate_character_create_effect_mingchu = {
             has_global_variable = feng_guoyong_furen_scope
             NOT = { has_global_variable = feng_guoyong_feng_guoyong_furen }
         }
-        scope:feng_guoyong_scope = {
+        global_var:feng_guoyong_scope = {
             marry_character = global_var:feng_guoyong_furen_scope
         }
-        set_global_variable = { name = feng_guoyong_feng_guoyong_furen; value = yes }
+        set_global_variable = { name = feng_guoyong_feng_guoyong_furen value = yes }
     }
     # 冯诚（长子，冯胜之侄）
     if = {
@@ -1457,10 +1457,10 @@ generate_character_create_effect_mingchu = {
             has_global_variable = feng_sheng_furen_scope
             NOT = { has_global_variable = feng_sheng_feng_sheng_furen }
         }
-        scope:feng_sheng_scope = {
+        global_var:feng_sheng_scope = {
             marry_character = global_var:feng_sheng_furen_scope
         }
-        set_global_variable = { name = feng_sheng_feng_sheng_furen; value = yes }
+        set_global_variable = { name = feng_sheng_feng_sheng_furen value = yes }
     }
     # 冯婉宁（长女）
     if = {
@@ -1564,10 +1564,10 @@ generate_character_create_effect_mingchu = {
             has_global_variable = hu_dahai_furen_scope
             NOT = { has_global_variable = hu_dahai_hu_dahai_furen }
         }
-        scope:hu_dahai_scope = {
+        global_var:hu_dahai_scope = {
             marry_character = global_var:hu_dahai_furen_scope
         }
-        set_global_variable = { name = hu_dahai_hu_dahai_furen; value = yes }
+        set_global_variable = { name = hu_dahai_hu_dahai_furen value = yes }
     }
     # 胡三舍（长子）
     if = {
@@ -1737,10 +1737,10 @@ generate_character_create_effect_mingchu = {
             has_global_variable = liaoyongzhong_furen_scope
             NOT = { has_global_variable = liao_yongzhong_liaoyongzhong_furen }
         }
-        scope:liao_yongzhong_scope = {
+        global_var:liao_yongzhong_scope = {
             marry_character = global_var:liaoyongzhong_furen_scope
         }
-        set_global_variable = { name = liao_yongzhong_liaoyongzhong_furen; value = yes }
+        set_global_variable = { name = liao_yongzhong_liaoyongzhong_furen value = yes }
     }
     # 廖权（子）
     if = {
@@ -1821,10 +1821,10 @@ generate_character_create_effect_mingchu = {
             has_global_variable = feng_xiuxiu_scope
             NOT = { has_global_variable = mu_ying_feng_xiuxiu }
         }
-        scope:mu_ying_scope = {
+        global_var:mu_ying_scope = {
             marry_character = global_var:feng_xiuxiu_scope
         }
-        set_global_variable = { name = mu_ying_feng_xiuxiu; value = yes }
+        set_global_variable = { name = mu_ying_feng_xiuxiu value = yes }
     }
     # 沐春（长子，冯氏所出）
     if = {
@@ -1858,10 +1858,10 @@ generate_character_create_effect_mingchu = {
             has_global_variable = geng_wanqing_scope
             NOT = { has_global_variable = mu_ying_geng_wanqing }
         }
-        scope:mu_ying_scope = {
+        global_var:mu_ying_scope = {
             marry_character = global_var:geng_wanqing_scope
         }
-        set_global_variable = { name = mu_ying_geng_wanqing; value = yes }
+        set_global_variable = { name = mu_ying_geng_wanqing value = yes }
     }
     # 沐晟（次子，耿氏所出）
     if = {
