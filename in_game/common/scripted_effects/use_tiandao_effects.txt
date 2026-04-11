@@ -552,6 +552,162 @@ generate_character_create_effect_mingchu = {
         }
         set_global_variable = { name = xu_da_xie_furen; value = yes }
     }
+    #-----常遇春家族-----
+    # 常遇春
+    if = {
+        limit = {
+            tag = MNG
+            current_date >= 1330.6.1
+            NOT = { has_global_variable = chang_yuchun_scope }
+        }
+        create_named_dynasty = 常
+        create_character = {
+            dynasty = dynasty:常
+            adm = { 50 80 }
+            dip = { 40 70 }
+            mil = { 75 99 }
+            first_name = 遇春
+            birth_date = 1330.6.1
+            female = no
+            culture = root.culture
+            religion = root.religion
+            estate = estate_type:nobles_estate
+            save_scope_as = chang_yuchun_scope
+            set_global_variable = { name = chang_yuchun_scope value = scope:chang_yuchun_scope }
+        }
+    }
+    # 常遇春妻子蓝月娥
+    if = {
+        limit = {
+            tag = MNG
+            current_date >= 1332.6.1
+            NOT = { has_global_variable = lan_yuee_scope }
+        }
+        create_named_dynasty = 蓝
+        create_character = {
+            dynasty = dynasty:蓝
+            adm = { 40 70 }
+            dip = { 40 70 }
+            mil = { 30 60 }
+            first_name = 月娥
+            birth_date = 1332.6.1
+            female = yes
+            culture = root.culture
+            religion = root.religion
+            estate = estate_type:nobles_estate
+            save_scope_as = lan_yuee_scope
+            set_global_variable = { name = lan_yuee_scope value = scope:lan_yuee_scope }
+        }
+    }
+    # 绑定常遇春和蓝月娥的夫妻关系
+    if = {
+        limit = { 
+            current_date >= 1350.6.1
+            has_global_variable = chang_yuchun_scope
+            has_global_variable = lan_yuee_scope
+            NOT = { has_global_variable = chang_yuchun_lan_yuee }
+        }
+        scope:chang_yuchun_scope = {
+            marry_character = global_var:lan_yuee_scope
+        }
+        set_global_variable = { name = chang_yuchun_lan_yuee; value = yes }
+    }
+    # 常茂（长子）
+    if = {
+        limit = {
+            tag = MNG
+            current_date >= 1355.6.1
+            NOT = { has_global_variable = chang_mao_scope }
+        }
+        create_character = {
+            dynasty = dynasty:常
+            adm = { 30 60 }
+            dip = { 30 60 }
+            mil = { 30 60 }
+            first_name = 茂
+            birth_date = 1355.6.1
+            female = no
+            culture = root.culture
+            religion = root.religion
+            estate = estate_type:nobles_estate
+            father = global_var:chang_yuchun_scope
+            mother = global_var:lan_yuee_scope
+            save_scope_as = chang_mao_scope
+            set_global_variable = { name = chang_mao_scope value = scope:chang_mao_scope }
+        }
+    }
+    # 常婉清（长女，朱标妻）
+    if = {
+        limit = {
+            tag = MNG
+            current_date >= 1357.6.1
+            NOT = { has_global_variable = chang_wanqing_scope }
+        }
+        create_character = {
+            dynasty = dynasty:常
+            adm = { 50 80 }
+            dip = { 60 90 }
+            mil = { 20 40 }
+            first_name = 婉清
+            birth_date = 1357.6.1
+            female = yes
+            culture = root.culture
+            religion = root.religion
+            estate = estate_type:nobles_estate
+            father = global_var:chang_yuchun_scope
+            mother = global_var:lan_yuee_scope
+            save_scope_as = chang_wanqing_scope
+            set_global_variable = { name = chang_wanqing_scope value = scope:chang_wanqing_scope }
+        }
+    }
+    # 常升（次子）
+    if = {
+        limit = {
+            tag = MNG
+            current_date >= 1359.6.1
+            NOT = { has_global_variable = chang_sheng_scope }
+        }
+        create_character = {
+            dynasty = dynasty:常
+            adm = { 40 70 }
+            dip = { 30 60 }
+            mil = { 50 80 }
+            first_name = 升
+            birth_date = 1359.6.1
+            female = no
+            culture = root.culture
+            religion = root.religion
+            estate = estate_type:nobles_estate
+            father = global_var:chang_yuchun_scope
+            mother = global_var:lan_yuee_scope
+            save_scope_as = chang_sheng_scope
+            set_global_variable = { name = chang_sheng_scope value = scope:chang_sheng_scope }
+        }
+    }
+    # 常森（三子）
+    if = {
+        limit = {
+            tag = MNG
+            current_date >= 1361.6.1
+            NOT = { has_global_variable = chang_sen_scope }
+        }
+        create_character = {
+            dynasty = dynasty:常
+            adm = { 30 60 }
+            dip = { 30 60 }
+            mil = { 40 70 }
+            first_name = 森
+            birth_date = 1361.6.1
+            female = no
+            culture = root.culture
+            religion = root.religion
+            estate = estate_type:nobles_estate
+            father = global_var:chang_yuchun_scope
+            mother = global_var:lan_yuee_scope
+            save_scope_as = chang_sen_scope
+            set_global_variable = { name = chang_sen_scope value = scope:chang_sen_scope }
+        }
+    }
 }
 
 
