@@ -84,7 +84,7 @@ generate_character_create_effect_mingchu = {
     # 绑定徐达和谢氏的夫妻关系
     if = {
         limit = { 
-            current_date >= 1361.6.1
+            current_date >= 1354.6.1
             has_global_variable = xu_da_scope
             has_global_variable = xie_furen_scope
             NOT = { has_global_variable = xu_da_xie_furen }
@@ -101,6 +101,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1362.3.1
             NOT = { has_global_variable = xu_miaoyun_scope }
         }
+        create_named_dynasty = 徐
         create_character = {
             dynasty = dynasty:徐
             adm = { 60 90 }
@@ -125,6 +126,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1368.6.1
             NOT = { has_global_variable = xu_huizu_scope }
         }
+        create_named_dynasty = 徐
         create_character = {
             dynasty = dynasty:徐
             adm = { 50 70 }
@@ -149,6 +151,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1370.6.1
             NOT = { has_global_variable = xu_tianfu_scope }
         }
+        create_named_dynasty = 徐
         create_character = {
             dynasty = dynasty:徐
             adm = { 30 60 }
@@ -173,6 +176,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1372.6.1
             NOT = { has_global_variable = xu_yingxu_scope }
         }
+        create_named_dynasty = 徐
         create_character = {
             dynasty = dynasty:徐
             adm = { 40 70 }
@@ -197,6 +201,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1374.6.1
             NOT = { has_global_variable = xu_zengshou_scope }
         }
+        create_named_dynasty = 徐
         create_character = {
             dynasty = dynasty:徐
             adm = { 30 60 }
@@ -221,6 +226,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1364.6.1
             NOT = { has_global_variable = xu_miaoqing_scope }
         }
+        create_named_dynasty = 徐
         create_character = {
             dynasty = dynasty:徐
             adm = { 40 70 }
@@ -245,6 +251,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1366.6.1
             NOT = { has_global_variable = xu_miaojin_scope }
         }
+        create_named_dynasty = 徐
         create_character = {
             dynasty = dynasty:徐
             adm = { 40 70 }
@@ -330,6 +337,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1355.6.1
             NOT = { has_global_variable = chang_mao_scope }
         }
+        create_named_dynasty = 常
         create_character = {
             dynasty = dynasty:常
             adm = { 30 60 }
@@ -354,6 +362,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1357.6.1
             NOT = { has_global_variable = chang_wanqing_scope }
         }
+        create_named_dynasty = 常
         create_character = {
             dynasty = dynasty:常
             adm = { 50 80 }
@@ -378,6 +387,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1359.6.1
             NOT = { has_global_variable = chang_sheng_scope }
         }
+        create_named_dynasty = 常
         create_character = {
             dynasty = dynasty:常
             adm = { 40 70 }
@@ -402,6 +412,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1361.6.1
             NOT = { has_global_variable = chang_sen_scope }
         }
+        create_named_dynasty = 常
         create_character = {
             dynasty = dynasty:常
             adm = { 30 60 }
@@ -450,6 +461,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1341.6.1
             NOT = { has_global_variable = lan_yu_scope }
         }
+        create_named_dynasty = 蓝
         create_character = {
             dynasty = dynasty:蓝
             adm = { 50 80 }
@@ -473,6 +485,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1343.6.1
             NOT = { has_global_variable = lanyu_furen_scope }
         }
+        create_named_dynasty = 蓝
         create_character = {
             dynasty = dynasty:蓝
             adm = { 40 70 }
@@ -508,6 +521,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1362.6.1
             NOT = { has_global_variable = lan_lingying_scope }
         }
+        create_named_dynasty = 蓝
         create_character = {
             dynasty = dynasty:蓝
             adm = { 40 70 }
@@ -592,6 +606,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1348.6.1
             NOT = { has_global_variable = liu_lian_scope }
         }
+        create_named_dynasty = 刘
         create_character = {
             dynasty = dynasty:刘
             adm = { 60 90 }
@@ -616,6 +631,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1350.6.1
             NOT = { has_global_variable = liu_jing_scope }
         }
+        create_named_dynasty = 刘
         create_character = {
             dynasty = dynasty:刘
             adm = { 50 80 }
@@ -640,6 +656,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1346.6.1
             NOT = { has_global_variable = liu_shuzhen_scope }
         }
+        create_named_dynasty = 刘
         create_character = {
             dynasty = dynasty:刘
             adm = { 40 70 }
@@ -664,6 +681,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1349.6.1
             NOT = { has_global_variable = liu_shuhui_scope }
         }
+        create_named_dynasty = 刘
         create_character = {
             dynasty = dynasty:刘
             adm = { 40 70 }
@@ -712,6 +730,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1316.6.1
             NOT = { has_global_variable = lishanchang_furen_scope }
         }
+        create_named_dynasty = 李
         create_character = {
             dynasty = dynasty:李
             adm = { 40 70 }
@@ -747,6 +766,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1345.6.1
             NOT = { has_global_variable = li_qi_scope }
         }
+        create_named_dynasty = 李
         create_character = {
             dynasty = dynasty:李
             adm = { 50 80 }
@@ -771,6 +791,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1316.6.1
             NOT = { has_global_variable = li_cunyi_scope }
         }
+        create_named_dynasty = 李
         create_character = {
             dynasty = dynasty:李
             adm = { 40 70 }
@@ -853,6 +874,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1346.6.1
             NOT = { has_global_variable = tang_ding_scope }
         }
+        create_named_dynasty = 汤
         create_character = {
             dynasty = dynasty:汤
             adm = { 40 70 }
@@ -877,6 +899,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1348.6.1
             NOT = { has_global_variable = tang_yue_scope }
         }
+        create_named_dynasty = 汤
         create_character = {
             dynasty = dynasty:汤
             adm = { 40 70 }
@@ -901,6 +924,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1354.6.1
             NOT = { has_global_variable = tang_li_scope }
         }
+        create_named_dynasty = 汤
         create_character = {
             dynasty = dynasty:汤
             adm = { 30 60 }
@@ -925,6 +949,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1345.6.1
             NOT = { has_global_variable = tang_wanyi_scope }
         }
+        create_named_dynasty = 汤
         create_character = {
             dynasty = dynasty:汤
             adm = { 40 70 }
@@ -949,6 +974,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1347.6.1
             NOT = { has_global_variable = tang_shuhua_scope }
         }
+        create_named_dynasty = 汤
         create_character = {
             dynasty = dynasty:汤
             adm = { 40 70 }
@@ -973,6 +999,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1349.6.1
             NOT = { has_global_variable = tang_shulan_scope }
         }
+        create_named_dynasty = 汤
         create_character = {
             dynasty = dynasty:汤
             adm = { 40 70 }
@@ -997,6 +1024,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1351.6.1
             NOT = { has_global_variable = tang_shufang_scope }
         }
+        create_named_dynasty = 汤
         create_character = {
             dynasty = dynasty:汤
             adm = { 40 70 }
@@ -1021,6 +1049,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1353.6.1
             NOT = { has_global_variable = tang_shulian_scope }
         }
+        create_named_dynasty = 汤
         create_character = {
             dynasty = dynasty:汤
             adm = { 40 70 }
@@ -1105,6 +1134,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1357.6.1
             NOT = { has_global_variable = deng_zhen_scope }
         }
+        create_named_dynasty = 邓
         create_character = {
             dynasty = dynasty:邓
             adm = { 40 70 }
@@ -1129,6 +1159,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1359.6.1
             NOT = { has_global_variable = deng_ming_scope }
         }
+        create_named_dynasty = 邓
         create_character = {
             dynasty = dynasty:邓
             adm = { 30 60 }
@@ -1153,6 +1184,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1339.6.1
             NOT = { has_global_variable = deng_xu_scope }
         }
+        create_named_dynasty = 邓
         create_character = {
             dynasty = dynasty:邓
             adm = { 40 70 }
@@ -1199,6 +1231,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1331.6.1
             NOT = { has_global_variable = fuyoude_furen_scope }
         }
+        create_named_dynasty = 傅
         create_character = {
             dynasty = dynasty:傅
             adm = { 40 70 }
@@ -1234,6 +1267,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1349.6.1
             NOT = { has_global_variable = fu_zhong_scope }
         }
+        create_named_dynasty = 傅
         create_character = {
             dynasty = dynasty:傅
             adm = { 40 70 }
@@ -1258,6 +1292,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1351.6.1
             NOT = { has_global_variable = fu_rang_scope }
         }
+        create_named_dynasty = 傅
         create_character = {
             dynasty = dynasty:傅
             adm = { 30 60 }
@@ -1282,6 +1317,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1348.6.1
             NOT = { has_global_variable = fu_wanrong_scope }
         }
+        create_named_dynasty = 傅
         create_character = {
             dynasty = dynasty:傅
             adm = { 40 70 }
@@ -1330,6 +1366,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1325.6.1
             NOT = { has_global_variable = feng_guoyong_furen_scope }
         }
+        create_named_dynasty = 冯
         create_character = {
             dynasty = dynasty:冯
             adm = { 40 70 }
@@ -1389,6 +1426,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1347.6.1
             NOT = { has_global_variable = feng_xiuxiu_scope }
         }
+        create_named_dynasty = 冯
         create_character = {
             dynasty = dynasty:冯
             adm = { 40 70 }
@@ -1413,6 +1451,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1325.6.1
             NOT = { has_global_variable = feng_sheng_scope }
         }
+        create_named_dynasty = 冯
         create_character = {
             dynasty = dynasty:冯
             adm = { 40 70 }
@@ -1435,6 +1474,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1327.6.1
             NOT = { has_global_variable = feng_sheng_furen_scope }
         }
+        create_named_dynasty = 冯
         create_character = {
             dynasty = dynasty:冯
             adm = { 40 70 }
@@ -1470,6 +1510,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1346.6.1
             NOT = { has_global_variable = feng_wanning_scope }
         }
+        create_named_dynasty = 冯
         create_character = {
             dynasty = dynasty:冯
             adm = { 40 70 }
@@ -1494,6 +1535,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1348.6.1
             NOT = { has_global_variable = feng_wanqing_scope }
         }
+        create_named_dynasty = 冯
         create_character = {
             dynasty = dynasty:冯
             adm = { 40 70 }
@@ -1542,6 +1584,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1325.6.1
             NOT = { has_global_variable = hu_dahai_furen_scope }
         }
+        create_named_dynasty = 胡
         create_character = {
             dynasty = dynasty:胡
             adm = { 40 70 }
@@ -1577,6 +1620,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1344.6.1
             NOT = { has_global_variable = hu_sanshe_scope }
         }
+        create_named_dynasty = 胡
         create_character = {
             dynasty = dynasty:胡
             adm = { 30 60 }
@@ -1601,6 +1645,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1346.6.1
             NOT = { has_global_variable = hu_guanzhu_scope }
         }
+        create_named_dynasty = 胡
         create_character = {
             dynasty = dynasty:胡
             adm = { 30 60 }
@@ -1625,6 +1670,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1342.6.1
             NOT = { has_global_variable = hu_deji_scope }
         }
+        create_named_dynasty = 胡
         create_character = {
             dynasty = dynasty:胡
             adm = { 40 70 }
@@ -1671,6 +1717,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1322.6.1
             NOT = { has_global_variable = liao_yongqing_scope }
         }
+        create_named_dynasty = 廖
         create_character = {
             dynasty = dynasty:廖
             adm = { 40 70 }
@@ -1693,6 +1740,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1324.6.1
             NOT = { has_global_variable = liao_yongzhong_scope }
         }
+        create_named_dynasty = 廖
         create_character = {
             dynasty = dynasty:廖
             adm = { 35 65 }
@@ -1715,6 +1763,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1326.6.1
             NOT = { has_global_variable = liaoyongzhong_furen_scope }
         }
+        create_named_dynasty = 廖
         create_character = {
             dynasty = dynasty:廖
             adm = { 40 70 }
@@ -1750,6 +1799,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1345.6.1
             NOT = { has_global_variable = liao_quan_scope }
         }
+        create_named_dynasty = 廖
         create_character = {
             dynasty = dynasty:廖
             adm = { 40 70 }
@@ -1847,6 +1897,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1361.6.1
             NOT = { has_global_variable = mu_chun_scope }
         }
+        create_named_dynasty = 沐
         create_character = {
             dynasty = dynasty:沐
             adm = { 40 70 }
@@ -1871,6 +1922,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1367.6.1
             NOT = { has_global_variable = mu_sheng_scope }
         }
+        create_named_dynasty = 沐
         create_character = {
             dynasty = dynasty:沐
             adm = { 40 70 }
@@ -1895,6 +1947,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1369.6.1
             NOT = { has_global_variable = mu_ang_scope }
         }
+        create_named_dynasty = 沐
         create_character = {
             dynasty = dynasty:沐
             adm = { 40 70 }
@@ -1919,6 +1972,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1371.6.1
             NOT = { has_global_variable = mu_xin_scope }
         }
+        create_named_dynasty = 沐
         create_character = {
             dynasty = dynasty:沐
             adm = { 30 60 }
@@ -1943,6 +1997,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1368.6.1
             NOT = { has_global_variable = mu_wanhua_scope }
         }
+        create_named_dynasty = 沐
         create_character = {
             dynasty = dynasty:沐
             adm = { 40 70 }
@@ -1967,6 +2022,7 @@ generate_character_create_effect_mingchu = {
             current_date >= 1370.6.1
             NOT = { has_global_variable = mu_wanxiu_scope }
         }
+        create_named_dynasty = 沐
         create_character = {
             dynasty = dynasty:沐
             adm = { 40 70 }
