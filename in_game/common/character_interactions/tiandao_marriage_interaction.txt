@@ -44,13 +44,13 @@ tiandao_marriage_interaction = {
             is_married = no
             age_in_years >= 17
             age_in_years <= 30
+            estate_type = scope:recipient.estate_type
             # 逻辑过滤
             NOT = { is_same_gender = scope:recipient } # 性别相反
             NOT = { this = scope:recipient }           # 不能是同一个人
             NOT = { is_spouse_of = scope:recipient }   # 还没结婚
             NOT = { is_close_relative = scope:recipient } # 排除近亲（官方指令）
             NOT = { dynasty = scope:recipient.dynasty } #同姓排除
-            NOT = { has_estate = estate_type:burghers_estate }#排除市民
             # 官方安全判定
             # 官方提供的综合判定，包含了角色是否在监狱、是否因某些 modifier 无法结婚等隐藏条件
             character_can_marry_trigger = yes
