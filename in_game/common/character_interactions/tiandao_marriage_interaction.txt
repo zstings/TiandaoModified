@@ -22,7 +22,7 @@ tiandao_marriage_interaction = {
         visible = {
             is_alive = yes
             is_married = no
-            age_in_years >= 17
+            age_in_years >= 16
             age_in_years <= 30
         }
         enabled = {
@@ -42,7 +42,7 @@ tiandao_marriage_interaction = {
         visible = {
             is_alive = yes
             is_married = no
-            age_in_years >= 17
+            age_in_years >= 16
             age_in_years <= 30
             estate_type = scope:recipient.estate_type
             # 逻辑过滤
