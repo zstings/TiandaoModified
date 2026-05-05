@@ -15,3 +15,6 @@ l_simp_chinese:
   tiandao_marriage_interaction: "天道·赐婚"
   tiandao_marriage_interaction_desc_specific: "#E 【$tiandao_marriage_interaction$】#!\n为角色选择合适的配偶"
   tiandao_marriage_interaction_concept: "$tiandao_marriage_interaction$"
+  tiandao_marriage_interaction_choose_first_character: "选择赐婚对象"
+  tiandao_marriage_interaction_past: "提示"
+  tiandao_marriage_interaction_act_past: "恭喜恭喜"
