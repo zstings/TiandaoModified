@@ -1,17 +1,10 @@
 ﻿# 每月一次
 monthly_country_pulse = {
-    on_actions = {
-        # 执行明初角色创建
-        my_mingchu_character_spawn
-    }
-}
-
-my_mingchu_character_spawn = {
-    # 只有国家是明
-    trigger = {
-        tag = MNG
-    }
     effect = {
-        generate_character_create_effect_mingchu
+        if = {
+            limit = { tag = MNG }
+            generate_character_create_effect_mingchu = yes
+            tiandao_auto_marry = yes
+        }
     }
 }

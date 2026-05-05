@@ -32,8 +32,8 @@ const difficulty = `
 	global_rgo_build_time = -10
 	global_construction_speed = 10
 	# 全局\月 控制力
-	global_monthly_control = 10
-	global_max_control = 100
+	#global_monthly_control = 10
+	#global_max_control = 100
 	#造船速度
 	ship_build_speed = 1
 	#招募速度
@@ -68,6 +68,14 @@ const difficulty = `
 	spy_network_construction = 10
 	#战争分数花费
 	global_war_score_cost = -10
+	#受到的敌意
+	antagonism_received_modifier = -1
+	# 研究速度 +1000%
+	research_speed_modifier = 10.0
+	# 研究速度（直接）+1000%
+	research_speed = 10.0
+	# 每月识字率
+	global_monthly_literacy = 0.5
 `;
 
 // 读取difficulty.txt.bak文件内容并生成新的difficulty.txt文件
