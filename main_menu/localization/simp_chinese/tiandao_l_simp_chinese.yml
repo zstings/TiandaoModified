@@ -12,3 +12,6 @@ l_simp_chinese:
   tiandao_character_create_modifier_interaction_desc_specific: "#E 【$tiandao_character_create_modifier_interaction$】#!\n用于角色的创建"
   tiandao_character_create_modifier_interaction_concept: "$tiandao_character_create_modifier_interaction$"
   tiandao_character_create_modifier_effect: "effect generate_character_create_effect = { age = \"[GetVariableSystem.Get(\'input_age\')]\" sex = \"[GetVariableSystem.Get(\'input_sex\')]\" adm = \"[GetVariableSystem.Get(\'input_adm\')]\" mil = [GetVariableSystem.Get(\'input_mil\')] dip = [GetVariableSystem.Get(\'input_dip\')] dynasty = [GetVariableSystem.Get(\'input_dynasty\')] first_name = [GetVariableSystem.Get(\'input_first_name\')] }"
+  tiandao_marriage_interaction: "天道·赐婚"
+  tiandao_marriage_interaction_desc_specific: "#E 【$tiandao_marriage_interaction$】#!\n为角色选择合适的配偶"
+  tiandao_marriage_interaction_concept: "$tiandao_marriage_interaction$"

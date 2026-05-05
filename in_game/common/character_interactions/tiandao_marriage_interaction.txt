@@ -1,0 +1,72 @@
+﻿# 脚本参考来源: https://eu5.paradoxwikis.com/Character_modding
+tiandao_marriage_interaction = {
+    sound = UI_action_character_marry_noble       # 沿用游戏结婚音效
+    on_own_nation = yes                           # 只能对自己国家的角色使用
+    context_menu_click_mode = click               # 直接生效，无确认弹窗
+    message = no                                  # 不弹消息提示
+
+    # 按钮显示条件（右键菜单上何时出现）
+    potential = {
+        scope:actor = {
+            is_player = yes                       # 只有玩家看得见这个按钮
+        }
+        scope:recipient = {                       # 被右键点到的角色
+            is_married = no                       # 未婚
+            age_in_years >= 17
+            age_in_years <= 30
+        }
+    }
+
+    # 赐婚对象选择器（点击按钮后弹出的角色列表）
+    select_trigger = {
+        # 顶部显示被赐婚角色的头像卡片（从 marry_noble 学来的）
+        top_widget = marry_noble_character_top
+        looking_for_a = character
+        source = actor                           # 列出玩家国家的所有角色
+        target_flag = chosen_spouse              # 选中的角色存为 scope:chosen_spouse
+        name = "bestow_marriage_select_title"    # 标题，需在本地化文件中定义
+        none_available_msg_key = "bestow_marriage_no_characters"  # 无角色可选时的提示
+
+        column = {
+            data = name                          # 列表中显示角色名字
+        }
+
+        visible = {                              # 哪些角色会出现在列表中
+            is_alive = yes                       # 活着
+            # 你可以按需添加贵族、性别等过滤，例如：
+            # has_estate = estate_type:nobles_estate
+        }
+
+        enabled = {                              # 哪些角色可以被选中
+            is_married = no                      # 未婚
+            age_in_years >= 17
+            age_in_years <= 30
+            NOT = { is_same_gender = scope:recipient }  # 不同性别（若需要）
+            NOT = { is_close_relative = scope:recipient } # 避免近亲
+            # 游戏内置的结婚可行性检查（参照 marry_noble）
+            character_can_marry_trigger = yes
+        }
+    }
+
+    # 执行结婚
+    effect = {
+        if = {
+            limit = {
+                exists = scope:recipient
+                exists = scope:chosen_spouse
+            }
+            scope:recipient = {
+                marry_character = scope:chosen_spouse
+            }
+        }
+        # 可以添加赐婚的额外效果，例如增加少许合法性或威望
+        scope:actor = {
+            add_legitimacy = legitimacy_mild_penalty   # 略扣合法性以示强行指婚
+        }
+    }
+
+    # AI 永远不会主动使用
+    ai_will_do = {
+        value = 0
+    }
+}
