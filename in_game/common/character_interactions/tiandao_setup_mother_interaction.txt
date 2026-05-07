@@ -1,0 +1,71 @@
+﻿# 脚本参考来源: https://eu5.paradoxwikis.com/Character_modding
+tiandao_setup_mother_interaction = {
+    sound = UI_action_character_marry_noble       # 沿用游戏结婚音效
+    on_own_nation = yes                           # 只能对自己国家的角色使用
+    context_menu_click_mode = click               # 直接生效，无确认弹窗
+    message = yes                                 # 弹消息提示
+    
+    # 决定按钮在谁的右键菜单显示
+    potential = {
+        # 只有玩家看得见这个按钮
+        scope:actor = { is_player = yes }
+        # 这里不需要在这里判断年龄，因为我们在选择器里过滤
+    }
+
+    # 步骤 1：选择第一个人
+    select_trigger = {
+        looking_for_a = character
+        source = actor # 列出玩家国家的所有角色
+        target_flag = recipient # 将第一个人存为 recipient
+        name = "tiandao_setup_mother_name"
+        column = { data = name }
+        visible = {
+            is_alive = yes
+            age_in_years <= 30
+            NOT = { exists = mother }    # 没有母亲
+        }
+        enabled = {
+            is_alive = yes
+        }
+    }
+
+    # 步骤 2：选择第二个人（被设置为母亲的角色）
+    select_trigger = {
+        # top_widget = marry_noble_character_top # 如果你想用官方的UI样式可以开启
+        looking_for_a = character
+        source = actor # 列出玩家国家的所有角色
+        target_flag = target # 将第二个人存为 target
+        name = "tiandao_setup_mother_name"
+        column = { data = character_info } # 列出角色完整信息
+        
+        visible = {
+            is_alive = yes
+            is_female = yes               # 女性
+            # 用触发器代替
+            is_at_least_n_years_older_than_target = {
+                TARGET = scope:recipient
+                YEARS = 15
+            }
+            estate_type = scope:recipient.estate_type
+            NOT = { this = scope:recipient }     # 不能是自己
+            # 避免把辈分颠倒的人设为母亲（如已为祖辈）
+            NOT = { is_close_relative = scope:recipient } # 排除近亲（官方指令）
+        }
+    }
+
+    # 步骤 3：执行效果
+    effect = {
+        if = {
+            limit = {
+                exists = scope:recipient
+                exists = scope:target
+            }
+            # 使用官方结婚效果指令[cite: 4]
+            scope:recipient = {
+                change_mother = scope:target
+            }
+        }
+    }
+
+    ai_will_do = { value = 0 }
+}

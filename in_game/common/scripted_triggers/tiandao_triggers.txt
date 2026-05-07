@@ -1,0 +1,6 @@
+﻿is_at_least_n_years_older_than_target = {
+    age_in_years >= {
+        value = $TARGET$.age_in_years
+        add = $YEARS$
+    }
+}
