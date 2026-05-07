@@ -179,6 +179,31 @@ generate_character_create_effect_mingchu = {
             set_global_variable = { name = chang_mao_scope value = scope:chang_mao_scope }
         }
     }
+    # 常婉清（长女，朱标妻）
+    if = {
+        limit = {
+            tag = MNG
+            current_date >= 1357.6.1
+            NOT = { has_global_variable = chang_wanqing_scope }
+        }
+        create_named_dynasty = 常
+        create_character = {
+            dynasty = dynasty:常
+            adm = { 50 80 }
+            dip = { 60 90 }
+            mil = { 20 40 }
+            first_name = 婉清
+            birth_date = 1357.6.1
+            female = yes
+            culture = root.culture
+            religion = root.religion
+            estate = estate_type:nobles_estate
+            father = global_var:chang_yuchun_scope
+            mother = global_var:lan_yuee_scope
+            save_scope_as = chang_wanqing_scope
+            set_global_variable = { name = chang_wanqing_scope value = scope:chang_wanqing_scope }
+        }
+    }
     #-----刘伯温（刘基）家族-----
     # 刘伯温（刘基）
     if = {
